@@ -15,6 +15,7 @@ namespace FaceRecognitionForm.Service
             .ConnectionString;
 
         //restituisci il titolo, il genere e gli attori di un film casuale che appartiene a quel genere
+        //
         public List<string> GetMovie(string genre)
         {
             List<string> feedbackNumbers = new List<string>();
