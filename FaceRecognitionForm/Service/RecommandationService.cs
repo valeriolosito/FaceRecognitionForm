@@ -14,8 +14,49 @@ namespace FaceRecognitionForm.Service
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Connection"]
             .ConnectionString;
 
+        public List<string> GetMovie(List<string> titleList)
+        {
+            List<string> resultList = new List<string>();
+            string titles = null;
+            for (int i = 0; i < titleList.Count - 1; i++)
+            {
+                titles += "'" + titles + "',";
+            }
+
+            titles += "'" + titleList.Last() + "'";
+
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            try
+            {
+                conn.Open();
+                string query =
+                    "SELECT Title FROM [FaceRecognition].[dbo].[Film] where Title IN (@Title)";
+                SqlCommand command = new SqlCommand(query, conn);
+                SqlParameter parName = command.Parameters.AddWithValue("@Title", titles);
+                parName.DbType = DbType.String;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        resultList.Add(reader["Title"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return resultList;
+        }
+
         //restituisci il titolo, il genere e gli attori di un film casuale che appartiene a quel genere
-       
+
         public List<string> GetMovie(string genre)
         {
             List<string> feedbackNumbers = new List<string>();
