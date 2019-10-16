@@ -82,6 +82,41 @@ namespace FaceRecognitionForm.Service
             }
             return friendList;
         }
+        public List<Like> GetLikes(string access_token)
+        {
+            FacebookClient fb = new FacebookClient(access_token);
+            string userId = getUserId(access_token);
+            string path = String.Format("{0}/likes", userId);
+            dynamic data = fb.Get(path);
+            List<Like> likes = new List<Like>();
+            for (int i = 0; i < (int)data.data.Count; i++)
+            {
+                string name = data.data[i].name;
+                string id = data.data[i].id;
+                DateTime dateTime = Convert.ToDateTime(data.data[i].created_time);
+                Like like = new Like(name, id, dateTime);
+                likes.Add(like);
+            }
+            return likes;
+        }
+
+        public List<Movie> GetMovies(string access_token)
+        {
+            FacebookClient fb = new FacebookClient(access_token);
+            string userId = getUserId(access_token);
+            string path = String.Format("{0}/movies", userId);
+            dynamic data = fb.Get(path);
+            List<Movie> movies = new List<Movie>();
+            for (int i = 0; i < (int)data.data.Count; i++)
+            {
+                string name = data.data[i].name;
+                string id = data.data[i].id;
+                DateTime dateTime = Convert.ToDateTime(data.data[i].created_time);
+                Movie movie = new Movie(name, id, dateTime);
+                movies.Add(movie);
+            }
+            return movies;
+        }
 
         //data di nascita
         public string GetBirthday(string access_token)
