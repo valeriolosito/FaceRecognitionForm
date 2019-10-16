@@ -1,0 +1,20 @@
+Guida per importazione dei Film:
+1) Lancia lo script "CREATE_TABLE_FILM.sql"
+2) Importa il file "datasetFilm.csv" seguendo il seguente procedimento:
+   - Tasto destro sul Database "FaceRecognition"
+   - Scegliere "Attività" --> "Importa dati..."
+   - Premere "Avanti" e scegliere come origine dati "Origine file flat"
+   - Premere "Sfoglia" e selezionare il file "datasetFilm.csv"
+   - Impostare il valore di "Delimitatore di riga intestazione" a "Virgola" e check attivo su "Nomi di colonne nella prima riga di dati"
+   - Nella parte sinistra della schermata premere "Avanzate"
+   - Selezionare tutte le colonne da "color" a "movie_facebook_likes" e cambiare nella parte destra il "DataType", impostandolo su "flusso di testo [DT_TEXT]"
+   - Premere "Avanti"
+   - Cambiare la "Destinazione" impostandola su "SQL Server Native Client 11.0" e verificare che sulla voce "Database" sia impostato il database "FaceRecognition"
+   - Premere "Avanti"
+   - Selezionare come destinazione la Tabella "dbo.Film" e premere "Modifica mapping..."
+   - Nella colonna "Destinazione" troverai 4 campi impostati su "<ignora", assegna il mapping corretto scegliendo dal menù a tendina che si apre quando premi su "<ignora>"
+   - Premere "Avanti" per 2 volte e infine premere "Fine"
+   - La procedura dovrebbe essere completata senza errori e vedrai la tabella Film con tutti i record
+3) Lancia lo script "MODIFICA_TITLE_FILM.sql"
+
+A QUESTO PUNTO LA TABELLA DEI FILM E' PRONTA PER POTER ESSERE UTILIZZATA!

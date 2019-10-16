@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRecognitionForm", "FaceRecognitionForm\FaceRecognitionForm.csproj", "{F49B1F0A-4BAA-4DDF-A0C5-93C1CCD7C22F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F49B1F0A-4BAA-4DDF-A0C5-93C1CCD7C22F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49B1F0A-4BAA-4DDF-A0C5-93C1CCD7C22F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49B1F0A-4BAA-4DDF-A0C5-93C1CCD7C22F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F49B1F0A-4BAA-4DDF-A0C5-93C1CCD7C22F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49B1F0A-4BAA-4DDF-A0C5-93C1CCD7C22F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49B1F0A-4BAA-4DDF-A0C5-93C1CCD7C22F}.Release|x64.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C43A14A1-E4B2-4800-872D-363735BB3A6D}
+	EndGlobalSection
+EndGlobal
