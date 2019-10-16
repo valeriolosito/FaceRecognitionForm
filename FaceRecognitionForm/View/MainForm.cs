@@ -14,6 +14,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using DlibDotNet;
 using FaceRecognitionForm.Utility;
 using IronPython.Modules;
+using Microsoft.Scripting.Utils;
 
 namespace FaceRecognitionForm
 {
@@ -31,6 +32,9 @@ namespace FaceRecognitionForm
         private const string IMAGE_NAME = "IMAGE";
 
         private string mess = String.Empty;
+
+        List<Like> likesList = new List<Like>();
+        List<Movie> moviesList = new List<Movie>();
 
         //private int fbCount = 0;
 
@@ -254,6 +258,9 @@ namespace FaceRecognitionForm
                 {
                     listView_UserDataFacebook.Items.Add(friendList[i].Name);
                 }
+
+                likesList = fbService.GetLikes(token);
+                moviesList = fbService.GetMovies(token);
 
                 string dataNascita = fbService.GetBirthday(token);
                 txtNascita_UserDataFacebook.Text = dataNascita;
@@ -664,6 +671,7 @@ namespace FaceRecognitionForm
         private void btnRecommandation_HomePage_Click(object sender, EventArgs e)
         {
             setCurrentPanel(this.panelRecommendation);
+            
         }
 
         private void btnHome_Feedback_Click(object sender, EventArgs e)
