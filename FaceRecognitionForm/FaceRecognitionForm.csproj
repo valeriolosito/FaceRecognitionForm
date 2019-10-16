@@ -295,6 +295,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Affectiva.cs" />
+    <Compile Include="Model\Like.cs" />
+    <Compile Include="Model\Movie.cs" />
     <Compile Include="Model\PhotoProcessed.cs" />
     <Compile Include="Service\DeleteService.cs" />
     <Compile Include="Service\FeedbackService.cs" />
