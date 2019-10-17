@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelHomePage = new System.Windows.Forms.Panel();
             this.btnRecommandation_HomePage = new System.Windows.Forms.Button();
             this.btnFeedback_HomePage = new System.Windows.Forms.Button();
@@ -164,6 +164,8 @@
             this.lblGen1_Recommandation = new System.Windows.Forms.Label();
             this.lblRecom2_Recommandation = new System.Windows.Forms.Label();
             this.lblRecom1_Recommandation = new System.Windows.Forms.Label();
+            this.linkGoogle1_Recommandation = new System.Windows.Forms.LinkLabel();
+            this.linkGoogle2_Recommandation = new System.Windows.Forms.LinkLabel();
             this.panelHomePage.SuspendLayout();
             this.panelFeedback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartFeedback_Feedback)).BeginInit();
@@ -313,23 +315,23 @@
             // 
             // chartFeedback_Feedback
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartFeedback_Feedback.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartFeedback_Feedback.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartFeedback_Feedback.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartFeedback_Feedback.Legends.Add(legend3);
             this.chartFeedback_Feedback.Location = new System.Drawing.Point(211, 139);
             this.chartFeedback_Feedback.Name = "chartFeedback_Feedback";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series";
-            series1.YValuesPerPoint = 2;
-            this.chartFeedback_Feedback.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series";
+            series3.YValuesPerPoint = 2;
+            this.chartFeedback_Feedback.Series.Add(series3);
             this.chartFeedback_Feedback.Size = new System.Drawing.Size(526, 289);
             this.chartFeedback_Feedback.TabIndex = 0;
             this.chartFeedback_Feedback.Text = "chartFeedback_Feedback";
-            title1.Name = "Feedback Recommandation";
-            this.chartFeedback_Feedback.Titles.Add(title1);
+            title3.Name = "Feedback Recommandation";
+            this.chartFeedback_Feedback.Titles.Add(title3);
             // 
             // panelPhoto
             // 
@@ -1623,6 +1625,8 @@
             // panelRecommendation
             // 
             this.panelRecommendation.AutoSize = true;
+            this.panelRecommendation.Controls.Add(this.linkGoogle2_Recommandation);
+            this.panelRecommendation.Controls.Add(this.linkGoogle1_Recommandation);
             this.panelRecommendation.Controls.Add(this.btnHome_Recommandation);
             this.panelRecommendation.Controls.Add(this.lblActors2_Recommandation);
             this.panelRecommendation.Controls.Add(this.lblGenre2_Recommandation);
@@ -1718,7 +1722,7 @@
             // btnFeedbackKO_Recommandation
             // 
             this.btnFeedbackKO_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeedbackKO_Recommandation.Location = new System.Drawing.Point(524, 432);
+            this.btnFeedbackKO_Recommandation.Location = new System.Drawing.Point(524, 451);
             this.btnFeedbackKO_Recommandation.Name = "btnFeedbackKO_Recommandation";
             this.btnFeedbackKO_Recommandation.Size = new System.Drawing.Size(104, 34);
             this.btnFeedbackKO_Recommandation.TabIndex = 8;
@@ -1729,7 +1733,7 @@
             // btnFeedbackOK_Recommandation
             // 
             this.btnFeedbackOK_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFeedbackOK_Recommandation.Location = new System.Drawing.Point(354, 432);
+            this.btnFeedbackOK_Recommandation.Location = new System.Drawing.Point(354, 451);
             this.btnFeedbackOK_Recommandation.Name = "btnFeedbackOK_Recommandation";
             this.btnFeedbackOK_Recommandation.Size = new System.Drawing.Size(104, 34);
             this.btnFeedbackOK_Recommandation.TabIndex = 7;
@@ -1741,7 +1745,7 @@
             // 
             this.lblFeedback_Recommandation.AutoSize = true;
             this.lblFeedback_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeedback_Recommandation.Location = new System.Drawing.Point(23, 438);
+            this.lblFeedback_Recommandation.Location = new System.Drawing.Point(23, 457);
             this.lblFeedback_Recommandation.Name = "lblFeedback_Recommandation";
             this.lblFeedback_Recommandation.Size = new System.Drawing.Size(298, 20);
             this.lblFeedback_Recommandation.TabIndex = 6;
@@ -1806,6 +1810,30 @@
             this.lblRecom1_Recommandation.Size = new System.Drawing.Size(267, 20);
             this.lblRecom1_Recommandation.TabIndex = 0;
             this.lblRecom1_Recommandation.Text = "The first recommended movie is:";
+            // 
+            // linkGoogle1_Recommandation
+            // 
+            this.linkGoogle1_Recommandation.AutoSize = true;
+            this.linkGoogle1_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkGoogle1_Recommandation.Location = new System.Drawing.Point(332, 214);
+            this.linkGoogle1_Recommandation.Name = "linkGoogle1_Recommandation";
+            this.linkGoogle1_Recommandation.Size = new System.Drawing.Size(118, 16);
+            this.linkGoogle1_Recommandation.TabIndex = 16;
+            this.linkGoogle1_Recommandation.TabStop = true;
+            this.linkGoogle1_Recommandation.Text = "Cerca su Google...";
+            this.linkGoogle1_Recommandation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGoogle1_Recommandation_LinkClicked);
+            // 
+            // linkGoogle2_Recommandation
+            // 
+            this.linkGoogle2_Recommandation.AutoSize = true;
+            this.linkGoogle2_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkGoogle2_Recommandation.Location = new System.Drawing.Point(332, 395);
+            this.linkGoogle2_Recommandation.Name = "linkGoogle2_Recommandation";
+            this.linkGoogle2_Recommandation.Size = new System.Drawing.Size(118, 16);
+            this.linkGoogle2_Recommandation.TabIndex = 17;
+            this.linkGoogle2_Recommandation.TabStop = true;
+            this.linkGoogle2_Recommandation.Text = "Cerca su Google...";
+            this.linkGoogle2_Recommandation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGoogle2_Recommandation_LinkClicked);
             // 
             // MainForm
             // 
@@ -1993,5 +2021,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFeedback_Feedback;
         private System.Windows.Forms.Button btnHome_Feedback;
         private System.Windows.Forms.Button btnHome_Recommandation;
+        private System.Windows.Forms.LinkLabel linkGoogle2_Recommandation;
+        private System.Windows.Forms.LinkLabel linkGoogle1_Recommandation;
     }
 }

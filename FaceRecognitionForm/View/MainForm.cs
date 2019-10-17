@@ -753,5 +753,17 @@ namespace FaceRecognitionForm
         {
             setCurrentPanel(this.panelHomePage);
         }
+
+        private void linkGoogle1_Recommandation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start("http://www.google.com/search?q=" + lblTitle1_Recommandation.Text + "%20film");
+        }
+
+        private void linkGoogle2_Recommandation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start("http://www.google.com/search?q=" + lblTitle2_Recommandation.Text + "%20film");
+        }
     }
 }
