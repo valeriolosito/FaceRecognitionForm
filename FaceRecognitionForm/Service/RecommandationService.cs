@@ -6,6 +6,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FaceRecognitionForm.Model;
 
 namespace FaceRecognitionForm.Service
 {
@@ -14,32 +15,30 @@ namespace FaceRecognitionForm.Service
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Connection"]
             .ConnectionString;
 
-        public List<string> GetMovie(List<string> titleList)
+        public List<string> GetGenres(List<Movie> titleList)
         {
             List<string> resultList = new List<string>();
-            string titles = null;
+            string titles = String.Empty;
             for (int i = 0; i < titleList.Count - 1; i++)
-            {
-                titles += "'" + titles + "',";
-            }
+                titles += "'" + titleList[i].Id + "',";
 
-            titles += "'" + titleList.Last() + "'";
+            titles += "'" + titleList.Last().Id + "'";
 
             SqlConnection conn = new SqlConnection(this.connectionString);
             try
             {
                 conn.Open();
                 string query =
-                    "SELECT Title FROM [FaceRecognition].[dbo].[Film] where Title IN (@Title)";
+                    "SELECT Genres FROM [FaceRecognition].[dbo].[Film] where Title IN ("+ titles +")";
                 SqlCommand command = new SqlCommand(query, conn);
-                SqlParameter parName = command.Parameters.AddWithValue("@Title", titles);
-                parName.DbType = DbType.String;
+                //SqlParameter parName = command.Parameters.AddWithValue("@Title", titles);
+                //parName.DbType = DbType.String;
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        resultList.Add(reader["Title"].ToString());
+                        resultList.Add(reader["Genres"].ToString());
                     }
                 }
             }

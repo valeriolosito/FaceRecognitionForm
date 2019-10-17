@@ -8,15 +8,15 @@ namespace FaceRecognitionForm.Model
 {
     public class Like
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public DateTime created_time { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public DateTime CreatedTime { get; set; }
 
         public Like(string id, string name, DateTime created_time)
         {
-            this.id = id;
-            this.name = name;
-            this.created_time = created_time;
+            this.Id = id;
+            this.Name = name;
+            this.CreatedTime = created_time;
         }   
     }
 }

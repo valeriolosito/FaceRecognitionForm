@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using DlibDotNet;
@@ -25,6 +26,8 @@ namespace FaceRecognitionForm
         RegisterService registerService = new RegisterService();
         DeleteService deleteService = new DeleteService();
         FeedbackService feedbackService = new FeedbackService();
+        RecommandationService recommandationService = new RecommandationService();
+
         Affectiva affectiva;
 
         private Camera camera = new Camera();
@@ -50,7 +53,7 @@ namespace FaceRecognitionForm
             PanelUserDataFacebook,
             PanelTableUserDataFacebook
         }
-
+        
         public MainForm()
         {
             InitializeComponent();
@@ -671,7 +674,40 @@ namespace FaceRecognitionForm
         private void btnRecommandation_HomePage_Click(object sender, EventArgs e)
         {
             setCurrentPanel(this.panelRecommendation);
-            
+
+            //se ho già raccomandato un film, non devo cercare un nuovo film ma devo mostrare sempre lo stesso
+            if (lblTitle1_Recommandation.Text == "Title Movie" && lblGenre1_Recommandation.Text == "Genre Movie" &&
+                lblActors1_Recommandation.Text == "Actor Movie")
+            {
+                List<string> genresList = recommandationService.GetGenres(moviesList);
+
+                string[] genreSplit = null;
+                Dictionary<string, int> dict = new Dictionary<string, int>();
+
+                foreach (var singleGenre in genresList)
+                {
+                    genreSplit = singleGenre.Split('|');
+                    foreach (var genre in genreSplit)
+                    {
+                        if (dict.ContainsKey(genre))
+                        {
+                            dict[genre] += 1;
+                        }
+                        else
+                            dict.Add(genre, 1);
+                    }
+                }
+
+                //prende il genere preferito in base ai like ai film su Facebook
+                var favoriteGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //prende un film casuale dal Dataset con lo stesso genere preferito dall'utente Facebook
+                var recommendedMovie1 = this.recommandationService.GetMovie(favoriteGenre);
+
+                lblTitle1_Recommandation.Text = recommendedMovie1[0];
+                lblGenre1_Recommandation.Text = recommendedMovie1[1];
+                lblActors1_Recommandation.Text = recommendedMovie1[2];
+            }
         }
 
         private void btnHome_Feedback_Click(object sender, EventArgs e)
