@@ -38,6 +38,10 @@ namespace FaceRecognitionForm
 
         List<Like> likesList = new List<Like>();
         List<Movie> moviesList = new List<Movie>();
+        private string genreAffectiva = String.Empty;
+
+        private bool recommandationFacebook = false;
+        private bool recommandationAffectiva = false;
 
         //private int fbCount = 0;
 
@@ -264,6 +268,7 @@ namespace FaceRecognitionForm
 
                 likesList = fbService.GetLikes(token);
                 moviesList = fbService.GetMovies(token);
+                recommandationFacebook = true;
 
                 string dataNascita = fbService.GetBirthday(token);
                 txtNascita_UserDataFacebook.Text = dataNascita;
@@ -525,6 +530,20 @@ namespace FaceRecognitionForm
                         this.txtDisgust_Affectiva.Text = affectiva.Disgust;
                         this.txtFear_Affectiva.Text = affectiva.Fear;
                         this.txtJoy_Affectiva.Text = affectiva.Joy;
+
+                        Dictionary<string, decimal> dict = new Dictionary<string, decimal>();
+                        dict.Add("Romance", decimal.Parse(affectiva.Engagement, System.Globalization.NumberStyles.Float));
+                        dict.Add("Drama", decimal.Parse(affectiva.Valence, System.Globalization.NumberStyles.Float));
+                        dict.Add("History", decimal.Parse(affectiva.Contempt, System.Globalization.NumberStyles.Float));
+                        dict.Add("Sci-Fi", decimal.Parse(affectiva.Surprise, System.Globalization.NumberStyles.Float));
+                        dict.Add("Fantasy", decimal.Parse(affectiva.Anger, System.Globalization.NumberStyles.Float));
+                        dict.Add("Sport", decimal.Parse(affectiva.Sadness, System.Globalization.NumberStyles.Float));
+                        dict.Add("Mystery", decimal.Parse(affectiva.Disgust, System.Globalization.NumberStyles.Float));
+                        dict.Add("Thriller", decimal.Parse(affectiva.Fear, System.Globalization.NumberStyles.Float));
+                        dict.Add("Comedy", decimal.Parse(affectiva.Joy, System.Globalization.NumberStyles.Float));
+
+                        genreAffectiva = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+                        recommandationAffectiva = true;
                     }
                     else
                     {
@@ -673,40 +692,55 @@ namespace FaceRecognitionForm
 
         private void btnRecommandation_HomePage_Click(object sender, EventArgs e)
         {
-            setCurrentPanel(this.panelRecommendation);
-
-            //se ho già raccomandato un film, non devo cercare un nuovo film ma devo mostrare sempre lo stesso
-            if (lblTitle1_Recommandation.Text == "Title Movie" && lblGenre1_Recommandation.Text == "Genre Movie" &&
-                lblActors1_Recommandation.Text == "Actor Movie")
+            if (recommandationFacebook && recommandationAffectiva)
             {
-                List<string> genresList = recommandationService.GetGenres(moviesList);
+                setCurrentPanel(this.panelRecommendation);
 
-                string[] genreSplit = null;
-                Dictionary<string, int> dict = new Dictionary<string, int>();
-
-                foreach (var singleGenre in genresList)
+                //se ho già raccomandato un film, non devo cercare un nuovo film ma devo mostrare sempre lo stesso
+                if (lblTitle1_Recommandation.Text == "Title Movie" && lblGenre1_Recommandation.Text == "Genre Movie" &&
+                    lblActors1_Recommandation.Text == "Actor Movie")
                 {
-                    genreSplit = singleGenre.Split('|');
-                    foreach (var genre in genreSplit)
+                    List<string> genresList = recommandationService.GetGenres(moviesList);
+
+                    string[] genreSplit = null;
+                    Dictionary<string, int> dict = new Dictionary<string, int>();
+
+                    foreach (var singleGenre in genresList)
                     {
-                        if (dict.ContainsKey(genre))
+                        genreSplit = singleGenre.Split('|');
+                        foreach (var genre in genreSplit)
                         {
-                            dict[genre] += 1;
+                            if (dict.ContainsKey(genre))
+                            {
+                                dict[genre] += 1;
+                            }
+                            else
+                                dict.Add(genre, 1);
                         }
-                        else
-                            dict.Add(genre, 1);
                     }
+
+                    //prende il genere preferito in base ai like ai film su Facebook
+                    var favoriteGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                    //prende un film casuale dal Dataset con lo stesso genere preferito dall'utente Facebook
+                    var recommendedMovie1 = this.recommandationService.GetMovie(favoriteGenre);
+
+                    lblTitle1_Recommandation.Text = recommendedMovie1[0];
+                    lblGenre1_Recommandation.Text = recommendedMovie1[1];
+                    lblActors1_Recommandation.Text = recommendedMovie1[2];
+
+                    //prende un film casuale dal Dataset con lo stesso genere basato su Affectiva
+                    var recommendedMovie2 = this.recommandationService.GetMovie(genreAffectiva);
+
+                    lblTitle2_Recommandation.Text = recommendedMovie2[0];
+                    lblGenre2_Recommandation.Text = recommendedMovie2[1];
+                    lblActors2_Recommandation.Text = recommendedMovie2[2];
                 }
-
-                //prende il genere preferito in base ai like ai film su Facebook
-                var favoriteGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
-
-                //prende un film casuale dal Dataset con lo stesso genere preferito dall'utente Facebook
-                var recommendedMovie1 = this.recommandationService.GetMovie(favoriteGenre);
-
-                lblTitle1_Recommandation.Text = recommendedMovie1[0];
-                lblGenre1_Recommandation.Text = recommendedMovie1[1];
-                lblActors1_Recommandation.Text = recommendedMovie1[2];
+            }
+            else
+            {
+                MessageBox.Show("Prima devi fare Facebook e Affectiva!", "Thank you!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 

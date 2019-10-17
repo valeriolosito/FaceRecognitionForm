@@ -65,10 +65,10 @@ namespace FaceRecognitionForm.Service
             {
                 conn.Open();
                 string query =
-                    "SELECT TOP 1 Title, Genres, Actor_1_Name, Actor_2_Name, Actor_3_Name FROM [FaceRecognition].[dbo].[Film] where Genres like @Genre ORDER BY NEWID()";
+                    "SELECT TOP 1 Title, Genres, Actor_1_Name, Actor_2_Name, Actor_3_Name FROM [FaceRecognition].[dbo].[Film] where Genres like'%" + genre + "%' ORDER BY NEWID()";
                 SqlCommand command = new SqlCommand(query, conn);
-                SqlParameter parName = command.Parameters.AddWithValue("@Genre", genre);
-                parName.DbType = DbType.String;
+                //SqlParameter parName = command.Parameters.AddWithValue("@Genre", genre);
+                //parName.DbType = DbType.String;
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
