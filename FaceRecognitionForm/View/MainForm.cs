@@ -16,6 +16,9 @@ using DlibDotNet;
 using FaceRecognitionForm.Utility;
 using IronPython.Modules;
 using Microsoft.Scripting.Utils;
+using System.Net;
+using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace FaceRecognitionForm
 {
@@ -42,6 +45,17 @@ namespace FaceRecognitionForm
 
         private bool recommandationFacebook = false;
         private bool recommandationAffectiva = false;
+        private bool isAffectivaReady = false;
+
+
+
+        private enum RecommandationType
+        {
+            AFFECTIVA,
+            FACEBOOK
+        }
+
+        private RecommandationType recommandationType;
 
         //private int fbCount = 0;
 
@@ -690,7 +704,7 @@ namespace FaceRecognitionForm
             chartFeedback_Feedback.Series["Series"].IsValueShownAsLabel = true;
         }
 
-        private void btnRecommandation_HomePage_Click(object sender, EventArgs e)
+        private async void btnRecommandation_HomePage_Click(object sender, EventArgs e)
         {
             if (recommandationFacebook && recommandationAffectiva)
             {
@@ -723,27 +737,51 @@ namespace FaceRecognitionForm
                     var favoriteGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
 
                     //prende un film casuale dal Dataset con lo stesso genere preferito dall'utente Facebook
-                    var recommendedMovie1 = this.recommandationService.GetMovie(favoriteGenre);
+                    var recommendedMovieFacebook = this.recommandationService.GetMovie(favoriteGenre);
 
-                    lblTitle1_Recommandation.Text = recommendedMovie1[0];
-                    lblGenre1_Recommandation.Text = recommendedMovie1[1];
-                    lblActors1_Recommandation.Text = recommendedMovie1[2];
+                    lblTitle1_Recommandation.Text = recommendedMovieFacebook[0];
+                    lblGenre1_Recommandation.Text = recommendedMovieFacebook[1];
+                    lblActors1_Recommandation.Text = recommendedMovieFacebook[2];
+                    this.recommandationType = RecommandationType.FACEBOOK;
+                    string linkMovieFacebook = recommendedMovieFacebook[3];
 
+
+                    setImageMovieFacebook(linkMovieFacebook);
                     //prende un film casuale dal Dataset con lo stesso genere basato su Affectiva
-                    var recommendedMovie2 = this.recommandationService.GetMovie(genreAffectiva);
+                    var recommendedMovieAffectiva = this.recommandationService.GetMovie(genreAffectiva);
 
-                    lblTitle2_Recommandation.Text = recommendedMovie2[0];
-                    lblGenre2_Recommandation.Text = recommendedMovie2[1];
-                    lblActors2_Recommandation.Text = recommendedMovie2[2];
+                    lblTitle2_Recommandation.Text = recommendedMovieAffectiva[0];
+                    lblGenre2_Recommandation.Text = recommendedMovieAffectiva[1];
+                    lblActors2_Recommandation.Text = recommendedMovieAffectiva[2];
+                    this.recommandationType = RecommandationType.AFFECTIVA;
+                    string linkMovieAffectiva = recommendedMovieAffectiva[3];
+                    setImageMovieAffectiva(linkMovieAffectiva);
+ 
+
+
                 }
+
+               
+                
+            }
+            else if (recommandationFacebook)
+            {
+                MessageBox.Show("You must log in and run details image at least once!!", "Thank you!", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            else if(recommandationAffectiva)
+            {
+                MessageBox.Show("You must log in via Facebook at least once!!", "Thank you!", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Prima devi fare Facebook e Affectiva!", "Thank you!", MessageBoxButtons.OK,
+                MessageBox.Show("You must log in!", "Thank you!", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
+      
         private void btnHome_Feedback_Click(object sender, EventArgs e)
         {
             setCurrentPanel(this.panelHomePage);
@@ -765,5 +803,62 @@ namespace FaceRecognitionForm
             // Navigate to a URL.
             System.Diagnostics.Process.Start("http://www.google.com/search?q=" + lblTitle2_Recommandation.Text + "%20film");
         }
+
+        private void setImageMovieFacebook(string url)
+        {
+           
+            WebBrowser browserFacebook = new WebBrowser();
+            browserFacebook.Navigate(url);
+            browserFacebook.ScriptErrorsSuppressed = true;
+            browserFacebook.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(browserFacebook_DocumentCompleted);
+        }
+
+        private void setImageMovieAffectiva(string url)
+        {
+            WebBrowser browserAffectiva = new WebBrowser();
+            browserAffectiva.Navigate(url);
+            browserAffectiva.ScriptErrorsSuppressed = true;
+            browserAffectiva.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(browserAffectiva_DocumentCompleted);
+        }
+
+        private void browserFacebook_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            
+            var browser = (WebBrowser)sender;
+            var client = new WebClient();
+            foreach (var img in browser.Document.Images)
+            {
+                var image = img as HtmlElement;
+                var altAttribute = image.GetAttribute("alt");
+                if (altAttribute.Contains("Poster"))
+                {
+                    var srcPath = image.GetAttribute("src").TrimEnd('/');
+                    var imagePath = Application.StartupPath + ConfigurationManager.AppSettings["imageFacebookTab"];
+                    client.DownloadFile(new Uri(srcPath), imagePath);
+                    this.pictureBox_TabFacebook.Image = Utilities.GetCopyImage(imagePath);
+                    this.isAffectivaReady = true;
+ 
+                }
+            }
+        }
+
+        private void browserAffectiva_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            var browser = (WebBrowser)sender;
+            var client = new WebClient();
+            foreach (var img in browser.Document.Images)
+            {
+                var image = img as HtmlElement;
+                var altAttribute = image.GetAttribute("alt");
+                if (altAttribute.Contains("Poster"))
+                {
+                    var srcPath = image.GetAttribute("src").TrimEnd('/');
+                    var imagePath = Application.StartupPath + ConfigurationManager.AppSettings["imageAffectivaTab"];
+                    client.DownloadFile(new Uri(srcPath), imagePath);             
+                    this.pictureBox_TabAffectiva.Image = Utilities.GetCopyImage(imagePath); ;
+                }
+            }
+        }
     }
 }
+

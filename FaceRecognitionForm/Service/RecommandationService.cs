@@ -31,9 +31,7 @@ namespace FaceRecognitionForm.Service
                 string query =
                     "SELECT Genres FROM [FaceRecognition].[dbo].[Film] where Title IN ("+ titles +")";
                 SqlCommand command = new SqlCommand(query, conn);
-                //SqlParameter parName = command.Parameters.AddWithValue("@Title", titles);
-                //parName.DbType = DbType.String;
-
+           
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -58,14 +56,14 @@ namespace FaceRecognitionForm.Service
 
         public List<string> GetMovie(string genre)
         {
-            List<string> feedbackNumbers = new List<string>();
+            List<string> movies = new List<string>();
 
             SqlConnection conn = new SqlConnection(this.connectionString);
             try
             {
                 conn.Open();
                 string query =
-                    "SELECT TOP 1 Title, Genres, Actor_1_Name, Actor_2_Name, Actor_3_Name FROM [FaceRecognition].[dbo].[Film] where Genres like'%" + genre + "%' ORDER BY NEWID()";
+                    "SELECT TOP 1 Title, Genres, Actor_1_Name, Actor_2_Name, Actor_3_Name, Movie_imbd_link FROM [FaceRecognition].[dbo].[Film] where Genres like'%" + genre + "%' ORDER BY NEWID()";
                 SqlCommand command = new SqlCommand(query, conn);
                 //SqlParameter parName = command.Parameters.AddWithValue("@Genre", genre);
                 //parName.DbType = DbType.String;
@@ -73,17 +71,19 @@ namespace FaceRecognitionForm.Service
                 {
                     if (reader.Read())
                     {
-                        feedbackNumbers.Add(reader["Title"].ToString());
-                        feedbackNumbers.Add(reader["Genres"].ToString());
-
+                        movies.Add(reader["Title"].ToString());
+                        movies.Add(reader["Genres"].ToString());
+                       
                         if (reader["Actor_1_Name"] == "")
-                            feedbackNumbers.Add("");
+                            movies.Add("");
                         else if (reader["Actor_2_Name"] == "")
-                            feedbackNumbers.Add(reader["Actor_1_Name"].ToString());
+                            movies.Add(reader["Actor_1_Name"].ToString());
                         else if (reader["Actor_3_Name"] == "")
-                            feedbackNumbers.Add(reader["Actor_1_Name"] + ", " + reader["Actor_2_Name"]);
+                            movies.Add(reader["Actor_1_Name"] + ", " + reader["Actor_2_Name"]);
                         else
-                            feedbackNumbers.Add(reader["Actor_1_Name"] + ", " + reader["Actor_2_Name"] + ", " + reader["Actor_3_Name"]);
+                            movies.Add(reader["Actor_1_Name"] + ", " + reader["Actor_2_Name"] + ", " + reader["Actor_3_Name"]);
+
+                        movies.Add(reader["Movie_imbd_link"].ToString());
                     }
                 }
             }
@@ -95,7 +95,85 @@ namespace FaceRecognitionForm.Service
             {
                 conn.Close();
             }
-            return feedbackNumbers;
+            return movies;
         }
+
+        /*
+         *   public string GetMovieLink(string title)
+          {
+              string result = string.Empty;
+              SqlConnection conn = new SqlConnection(this.connectionString);
+              try
+              {
+                  conn.Open();
+                  string query =
+                      "SELECT top(1) Movie_imbd_link FROM [FaceRecognition].[dbo].[Film] where Title = @Title";
+                  SqlCommand command = new SqlCommand(query, conn);
+                  SqlParameter parName = command.Parameters.AddWithValue("@Title", title);
+                  parName.DbType = DbType.String;
+                  using (SqlDataReader reader = command.ExecuteReader())
+                  {
+                      if (reader.Read())
+                      {
+                          result = reader["Movie_imbd_link"].ToString();
+                      }
+                  }
+              }
+              catch (Exception ex)
+              {
+                  Console.Write(ex.Message);
+              }
+              finally
+              {
+                  conn.Close();
+              }
+
+              return result;
+          }
+         */
+        public List<string> set(string genre)
+        {
+            List<string> movies = new List<string>();
+
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            try
+            {
+                conn.Open();
+                string query =
+                    "SELECT TOP 1 Title, Genres, Actor_1_Name, Actor_2_Name, Actor_3_Name, Movie_imbd_link FROM [FaceRecognition].[dbo].[Film] where Genres like'%" + genre + "%' ORDER BY NEWID()";
+                SqlCommand command = new SqlCommand(query, conn);
+                //SqlParameter parName = command.Parameters.AddWithValue("@Genre", genre);
+                //parName.DbType = DbType.String;
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        movies.Add(reader["Title"].ToString());
+                        movies.Add(reader["Genres"].ToString());
+
+                        if (reader["Actor_1_Name"] == "")
+                            movies.Add("");
+                        else if (reader["Actor_2_Name"] == "")
+                            movies.Add(reader["Actor_1_Name"].ToString());
+                        else if (reader["Actor_3_Name"] == "")
+                            movies.Add(reader["Actor_1_Name"] + ", " + reader["Actor_2_Name"]);
+                        else
+                            movies.Add(reader["Actor_1_Name"] + ", " + reader["Actor_2_Name"] + ", " + reader["Actor_3_Name"]);
+
+                        movies.Add(reader["Movie_imbd_link"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return movies;
+        }
+
     }
 }
