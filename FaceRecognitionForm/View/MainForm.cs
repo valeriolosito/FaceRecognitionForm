@@ -702,6 +702,7 @@ namespace FaceRecognitionForm
             }
 
             chartFeedback_Feedback.Series["Series"].IsValueShownAsLabel = true;
+            chartFeedback_Feedback.Series["Series"].LabelFormat = "{#'%'}";
         }
 
         private async void btnRecommandation_HomePage_Click(object sender, EventArgs e)
@@ -745,7 +746,6 @@ namespace FaceRecognitionForm
                     this.recommandationType = RecommandationType.FACEBOOK;
                     string linkMovieFacebook = recommendedMovieFacebook[3];
 
-
                     setImageMovieFacebook(linkMovieFacebook);
                     //prende un film casuale dal Dataset con lo stesso genere basato su Affectiva
                     var recommendedMovieAffectiva = this.recommandationService.GetMovie(genreAffectiva);
@@ -756,9 +756,6 @@ namespace FaceRecognitionForm
                     this.recommandationType = RecommandationType.AFFECTIVA;
                     string linkMovieAffectiva = recommendedMovieAffectiva[3];
                     setImageMovieAffectiva(linkMovieAffectiva);
- 
-
-
                 }
 
                

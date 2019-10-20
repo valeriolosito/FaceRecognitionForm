@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelHomePage = new System.Windows.Forms.Panel();
             this.btnRecommandation_HomePage = new System.Windows.Forms.Button();
             this.btnFeedback_HomePage = new System.Windows.Forms.Button();
@@ -172,7 +171,7 @@
             this.btnFeedbackKO_Recommandation = new System.Windows.Forms.Button();
             this.btnFeedbackOK_Recommandation = new System.Windows.Forms.Button();
             this.lblFeedback_Recommandation = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panelHomePage.SuspendLayout();
             this.panelFeedback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartFeedback_Feedback)).BeginInit();
@@ -306,6 +305,7 @@
             // panelFeedback
             // 
             this.panelFeedback.AutoSize = true;
+            this.panelFeedback.Controls.Add(this.label1);
             this.panelFeedback.Controls.Add(this.btnHome_Feedback);
             this.panelFeedback.Controls.Add(this.chartFeedback_Feedback);
             this.panelFeedback.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -328,24 +328,24 @@
             // 
             // chartFeedback_Feedback
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartFeedback_Feedback.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartFeedback_Feedback.Legends.Add(legend7);
-            this.chartFeedback_Feedback.Location = new System.Drawing.Point(281, 171);
+            chartArea1.Name = "ChartArea1";
+            this.chartFeedback_Feedback.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartFeedback_Feedback.Legends.Add(legend1);
+            this.chartFeedback_Feedback.Location = new System.Drawing.Point(52, 171);
             this.chartFeedback_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.chartFeedback_Feedback.Name = "chartFeedback_Feedback";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Legend = "Legend1";
-            series7.Name = "Series";
-            series7.YValuesPerPoint = 2;
-            this.chartFeedback_Feedback.Series.Add(series7);
-            this.chartFeedback_Feedback.Size = new System.Drawing.Size(701, 356);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series";
+            series1.YValuesPerPoint = 2;
+            this.chartFeedback_Feedback.Series.Add(series1);
+            this.chartFeedback_Feedback.Size = new System.Drawing.Size(1178, 356);
             this.chartFeedback_Feedback.TabIndex = 0;
             this.chartFeedback_Feedback.Text = "chartFeedback_Feedback";
-            title7.Name = "Feedback Recommandation";
-            this.chartFeedback_Feedback.Titles.Add(title7);
+            title1.Name = "Feedback Recommandation";
+            this.chartFeedback_Feedback.Titles.Add(title1);
             // 
             // panelPhoto
             // 
@@ -454,7 +454,7 @@
             // txtAddressNumber_Register
             // 
             this.txtAddressNumber_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAddressNumber_Register.Location = new System.Drawing.Point(748, 230);
+            this.txtAddressNumber_Register.Location = new System.Drawing.Point(748, 215);
             this.txtAddressNumber_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddressNumber_Register.Multiline = true;
             this.txtAddressNumber_Register.Name = "txtAddressNumber_Register";
@@ -481,7 +481,7 @@
             // txtCF_Register
             // 
             this.txtCF_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCF_Register.Location = new System.Drawing.Point(320, 170);
+            this.txtCF_Register.Location = new System.Drawing.Point(320, 155);
             this.txtCF_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCF_Register.Multiline = true;
             this.txtCF_Register.Name = "txtCF_Register";
@@ -491,7 +491,7 @@
             // txtEmail_Register
             // 
             this.txtEmail_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail_Register.Location = new System.Drawing.Point(320, 470);
+            this.txtEmail_Register.Location = new System.Drawing.Point(320, 455);
             this.txtEmail_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail_Register.Multiline = true;
             this.txtEmail_Register.Name = "txtEmail_Register";
@@ -502,7 +502,7 @@
             // 
             this.lblEmail_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmail_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail_Register.Location = new System.Drawing.Point(131, 470);
+            this.lblEmail_Register.Location = new System.Drawing.Point(131, 455);
             this.lblEmail_Register.Name = "lblEmail_Register";
             this.lblEmail_Register.Size = new System.Drawing.Size(140, 34);
             this.lblEmail_Register.TabIndex = 22;
@@ -512,7 +512,7 @@
             // 
             this.lblCF_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCF_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCF_Register.Location = new System.Drawing.Point(131, 170);
+            this.lblCF_Register.Location = new System.Drawing.Point(131, 155);
             this.lblCF_Register.Name = "lblCF_Register";
             this.lblCF_Register.Size = new System.Drawing.Size(140, 34);
             this.lblCF_Register.TabIndex = 20;
@@ -522,7 +522,7 @@
             // 
             this.btnRegister_Register.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegister_Register.Location = new System.Drawing.Point(885, 620);
+            this.btnRegister_Register.Location = new System.Drawing.Point(885, 590);
             this.btnRegister_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister_Register.Name = "btnRegister_Register";
             this.btnRegister_Register.Size = new System.Drawing.Size(251, 50);
@@ -535,7 +535,7 @@
             // 
             this.btnAddPhoto_Register.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddPhoto_Register.Location = new System.Drawing.Point(504, 620);
+            this.btnAddPhoto_Register.Location = new System.Drawing.Point(504, 590);
             this.btnAddPhoto_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPhoto_Register.Name = "btnAddPhoto_Register";
             this.btnAddPhoto_Register.Size = new System.Drawing.Size(251, 50);
@@ -548,7 +548,7 @@
             // 
             this.btnPrevious_Register.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrevious_Register.Location = new System.Drawing.Point(132, 620);
+            this.btnPrevious_Register.Location = new System.Drawing.Point(132, 590);
             this.btnPrevious_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrevious_Register.Name = "btnPrevious_Register";
             this.btnPrevious_Register.Size = new System.Drawing.Size(251, 50);
@@ -560,7 +560,7 @@
             // txtProfession_Register
             // 
             this.txtProfession_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProfession_Register.Location = new System.Drawing.Point(320, 410);
+            this.txtProfession_Register.Location = new System.Drawing.Point(320, 395);
             this.txtProfession_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtProfession_Register.Multiline = true;
             this.txtProfession_Register.Name = "txtProfession_Register";
@@ -570,7 +570,7 @@
             // txtTelephone_Register
             // 
             this.txtTelephone_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelephone_Register.Location = new System.Drawing.Point(320, 350);
+            this.txtTelephone_Register.Location = new System.Drawing.Point(320, 335);
             this.txtTelephone_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelephone_Register.Multiline = true;
             this.txtTelephone_Register.Name = "txtTelephone_Register";
@@ -580,7 +580,7 @@
             // txtCity_Register
             // 
             this.txtCity_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCity_Register.Location = new System.Drawing.Point(320, 290);
+            this.txtCity_Register.Location = new System.Drawing.Point(320, 275);
             this.txtCity_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCity_Register.Multiline = true;
             this.txtCity_Register.Name = "txtCity_Register";
@@ -590,7 +590,7 @@
             // txtAddress_Register
             // 
             this.txtAddress_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAddress_Register.Location = new System.Drawing.Point(471, 230);
+            this.txtAddress_Register.Location = new System.Drawing.Point(471, 215);
             this.txtAddress_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress_Register.Multiline = true;
             this.txtAddress_Register.Name = "txtAddress_Register";
@@ -600,7 +600,7 @@
             // txtSurname_Register
             // 
             this.txtSurname_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSurname_Register.Location = new System.Drawing.Point(320, 110);
+            this.txtSurname_Register.Location = new System.Drawing.Point(320, 95);
             this.txtSurname_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSurname_Register.Multiline = true;
             this.txtSurname_Register.Name = "txtSurname_Register";
@@ -610,7 +610,7 @@
             // txtName_Register
             // 
             this.txtName_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName_Register.Location = new System.Drawing.Point(320, 50);
+            this.txtName_Register.Location = new System.Drawing.Point(320, 35);
             this.txtName_Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName_Register.Multiline = true;
             this.txtName_Register.Name = "txtName_Register";
@@ -621,7 +621,7 @@
             // 
             this.lblProfession_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProfession_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfession_Register.Location = new System.Drawing.Point(131, 410);
+            this.lblProfession_Register.Location = new System.Drawing.Point(131, 395);
             this.lblProfession_Register.Name = "lblProfession_Register";
             this.lblProfession_Register.Size = new System.Drawing.Size(140, 34);
             this.lblProfession_Register.TabIndex = 5;
@@ -631,7 +631,7 @@
             // 
             this.lblTelephone_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelephone_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephone_Register.Location = new System.Drawing.Point(131, 350);
+            this.lblTelephone_Register.Location = new System.Drawing.Point(131, 335);
             this.lblTelephone_Register.Name = "lblTelephone_Register";
             this.lblTelephone_Register.Size = new System.Drawing.Size(1140, 34);
             this.lblTelephone_Register.TabIndex = 4;
@@ -641,7 +641,7 @@
             // 
             this.lblCity_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCity_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity_Register.Location = new System.Drawing.Point(131, 290);
+            this.lblCity_Register.Location = new System.Drawing.Point(131, 275);
             this.lblCity_Register.Name = "lblCity_Register";
             this.lblCity_Register.Size = new System.Drawing.Size(140, 34);
             this.lblCity_Register.TabIndex = 3;
@@ -651,7 +651,7 @@
             // 
             this.lblAddress_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress_Register.Location = new System.Drawing.Point(131, 230);
+            this.lblAddress_Register.Location = new System.Drawing.Point(131, 215);
             this.lblAddress_Register.Name = "lblAddress_Register";
             this.lblAddress_Register.Size = new System.Drawing.Size(140, 34);
             this.lblAddress_Register.TabIndex = 2;
@@ -661,7 +661,7 @@
             // 
             this.lblSurname_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSurname_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname_Register.Location = new System.Drawing.Point(131, 110);
+            this.lblSurname_Register.Location = new System.Drawing.Point(131, 95);
             this.lblSurname_Register.Name = "lblSurname_Register";
             this.lblSurname_Register.Size = new System.Drawing.Size(140, 34);
             this.lblSurname_Register.TabIndex = 1;
@@ -671,7 +671,7 @@
             // 
             this.lblName_Register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName_Register.Location = new System.Drawing.Point(131, 50);
+            this.lblName_Register.Location = new System.Drawing.Point(131, 35);
             this.lblName_Register.Name = "lblName_Register";
             this.lblName_Register.Size = new System.Drawing.Size(140, 34);
             this.lblName_Register.TabIndex = 0;
@@ -1908,17 +1908,26 @@
             this.lblFeedback_Recommandation.TabIndex = 6;
             this.lblFeedback_Recommandation.Text = "Do you like the recommended films?";
             // 
-            // contextMenuStrip1
+            // label1
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(45, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1189, 50);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Feedback Graph";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1261, 753);
+            this.Controls.Add(this.panelFeedback);
+            this.Controls.Add(this.panelHomePage);
+            this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.panelRecommendation);
             this.Controls.Add(this.panelUserDataFacebook);
             this.Controls.Add(this.panelLoginFacebook);
@@ -1926,9 +1935,6 @@
             this.Controls.Add(this.panelPhoto);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelPerson);
-            this.Controls.Add(this.panelFeedback);
-            this.Controls.Add(this.panelHomePage);
-            this.Controls.Add(this.panelRegister);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -2107,11 +2113,11 @@
         private System.Windows.Forms.Button btnHome_Recommandation;
         private System.Windows.Forms.LinkLabel linkGoogle2_Recommandation;
         private System.Windows.Forms.LinkLabel linkGoogle1_Recommandation;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TabControl tabRecommandation;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox pictureBox_TabAffectiva;
         private System.Windows.Forms.PictureBox pictureBox_TabFacebook;
+        private System.Windows.Forms.Label label1;
     }
 }
