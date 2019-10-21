@@ -702,7 +702,13 @@ namespace FaceRecognitionForm
             }
 
             chartFeedback_Feedback.Series["Series"].IsValueShownAsLabel = true;
-            chartFeedback_Feedback.Series["Series"].LabelFormat = "{#'%'}";
+
+
+            Title title = new Title();
+            title.Font = new Font("Arial", 16, FontStyle.Bold);
+            title.Text = "Feedback Result";
+            chartFeedback_Feedback.Titles.Clear();
+            chartFeedback_Feedback.Titles.Add(title);
         }
 
         private async void btnRecommandation_HomePage_Click(object sender, EventArgs e)
@@ -746,6 +752,7 @@ namespace FaceRecognitionForm
                     this.recommandationType = RecommandationType.FACEBOOK;
                     string linkMovieFacebook = recommendedMovieFacebook[3];
 
+
                     setImageMovieFacebook(linkMovieFacebook);
                     //prende un film casuale dal Dataset con lo stesso genere basato su Affectiva
                     var recommendedMovieAffectiva = this.recommandationService.GetMovie(genreAffectiva);
@@ -756,6 +763,9 @@ namespace FaceRecognitionForm
                     this.recommandationType = RecommandationType.AFFECTIVA;
                     string linkMovieAffectiva = recommendedMovieAffectiva[3];
                     setImageMovieAffectiva(linkMovieAffectiva);
+ 
+
+
                 }
 
                
@@ -855,6 +865,13 @@ namespace FaceRecognitionForm
                     this.pictureBox_TabAffectiva.Image = Utilities.GetCopyImage(imagePath); ;
                 }
             }
+        }
+
+        private void btnStampa_Feedback_Click(object sender, EventArgs e)
+        {
+            PrintPreviewDialog ppd = new PrintPreviewDialog();
+            ppd.Document = chartFeedback_Feedback.Printing.PrintDocument;
+            ppd.ShowDialog();
         }
     }
 }
