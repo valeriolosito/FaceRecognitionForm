@@ -18,42 +18,46 @@ namespace FaceRecognitionForm.Service
         public List<string> GetGenres(List<Movie> titleList)
         {
             List<string> resultList = new List<string>();
-            string titles = String.Empty;
-            for (int i = 0; i < titleList.Count - 1; i++)
-                titles += "'" + titleList[i].Id + "',";
 
-            titles += "'" + titleList.Last().Id + "'";
-
-            SqlConnection conn = new SqlConnection(this.connectionString);
-            try
+            if (titleList.Count != 0)
             {
-                conn.Open();
-                string query =
-                    "SELECT Genres FROM [FaceRecognition].[dbo].[Film] where Title IN ("+ titles +")";
-                SqlCommand command = new SqlCommand(query, conn);
-           
-                using (SqlDataReader reader = command.ExecuteReader())
+                string titles = String.Empty;
+                for (int i = 0; i < titleList.Count - 1; i++)
+                    titles += "'" + titleList[i].Id + "',";
+
+                titles += "'" + titleList.Last().Id + "'";
+
+                SqlConnection conn = new SqlConnection(this.connectionString);
+
+                try
                 {
-                    while (reader.Read())
+                    conn.Open();
+                    string query =
+                        "SELECT Genres FROM [FaceRecognition].[dbo].[Film] where Title IN (" + titles + ")";
+                    SqlCommand command = new SqlCommand(query, conn);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        resultList.Add(reader["Genres"].ToString());
+                        while (reader.Read())
+                        {
+                            resultList.Add(reader["Genres"].ToString());
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
+                catch (Exception ex)
+                {
+                    Console.Write(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
 
             return resultList;
         }
 
-        //restituisci il titolo, il genere e gli attori di un film casuale che appartiene a quel genere
-
+        //restituisce il titolo, il genere e gli attori di un film casuale che appartiene a quel genere
         public List<string> GetMovie(string genre)
         {
             List<string> movies = new List<string>();
@@ -62,11 +66,10 @@ namespace FaceRecognitionForm.Service
             try
             {
                 conn.Open();
-                string query =
-                    "SELECT TOP 1 Title, Genres, Actor_1_Name, Actor_2_Name, Actor_3_Name, Movie_imbd_link FROM [FaceRecognition].[dbo].[Film] where Genres like'%" + genre + "%' ORDER BY NEWID()";
+                string query = "SELECT TOP 1 Title, Genres, Actor_1_Name, Actor_2_Name, Actor_3_Name, Movie_imbd_link FROM [FaceRecognition].[dbo].[Film] where Genres like'%" + genre + "%' ORDER BY NEWID()";
+                
                 SqlCommand command = new SqlCommand(query, conn);
-                //SqlParameter parName = command.Parameters.AddWithValue("@Genre", genre);
-                //parName.DbType = DbType.String;
+
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())

@@ -46,6 +46,7 @@ namespace FaceRecognitionForm
         private bool recommandationFacebook = false;
         private bool recommandationAffectiva = false;
         private bool isAffectivaReady = false;
+        private bool tabFacebook = false;
 
 
 
@@ -71,7 +72,7 @@ namespace FaceRecognitionForm
             PanelUserDataFacebook,
             PanelTableUserDataFacebook
         }
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -716,10 +717,11 @@ namespace FaceRecognitionForm
             if (recommandationFacebook && recommandationAffectiva)
             {
                 setCurrentPanel(this.panelRecommendation);
+                tabPage1.Visible = tabFacebook;
 
                 //se ho già raccomandato un film, non devo cercare un nuovo film ma devo mostrare sempre lo stesso
-                if (lblTitle1_Recommandation.Text == "Title Movie" && lblGenre1_Recommandation.Text == "Genre Movie" &&
-                    lblActors1_Recommandation.Text == "Actor Movie")
+                if (lblTitle2_Recommandation.Text == "Title Movie" && lblGenre2_Recommandation.Text == "Genre Movie" &&
+                    lblActors2_Recommandation.Text == "Actor Movie")
                 {
                     List<string> genresList = recommandationService.GetGenres(moviesList);
 
@@ -741,19 +743,30 @@ namespace FaceRecognitionForm
                     }
 
                     //prende il genere preferito in base ai like ai film su Facebook
-                    var favoriteGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
-
-                    //prende un film casuale dal Dataset con lo stesso genere preferito dall'utente Facebook
-                    var recommendedMovieFacebook = this.recommandationService.GetMovie(favoriteGenre);
-
-                    lblTitle1_Recommandation.Text = recommendedMovieFacebook[0];
-                    lblGenre1_Recommandation.Text = recommendedMovieFacebook[1];
-                    lblActors1_Recommandation.Text = recommendedMovieFacebook[2];
-                    this.recommandationType = RecommandationType.FACEBOOK;
-                    string linkMovieFacebook = recommendedMovieFacebook[3];
+                    var favoriteGenre = (dict.Count != 0) ? dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key : "";
 
 
-                    setImageMovieFacebook(linkMovieFacebook);
+                    if (favoriteGenre != "")
+                    {
+                        tabPage1.Visible = true;
+                        tabFacebook = true;
+                        //prende un film casuale dal Dataset con lo stesso genere preferito dall'utente Facebook
+                        var recommendedMovieFacebook = this.recommandationService.GetMovie(favoriteGenre);
+
+                        lblTitle1_Recommandation.Text = recommendedMovieFacebook[0];
+                        lblGenre1_Recommandation.Text = recommendedMovieFacebook[1];
+                        lblActors1_Recommandation.Text = recommendedMovieFacebook[2];
+                        this.recommandationType = RecommandationType.FACEBOOK;
+                        string linkMovieFacebook = recommendedMovieFacebook[3];
+                        setImageMovieFacebook(linkMovieFacebook);
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("You don't have any like a Facebook Movie", "Error Like Facebook Movie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
                     //prende un film casuale dal Dataset con lo stesso genere basato su Affectiva
                     var recommendedMovieAffectiva = this.recommandationService.GetMovie(genreAffectiva);
 
@@ -763,20 +776,14 @@ namespace FaceRecognitionForm
                     this.recommandationType = RecommandationType.AFFECTIVA;
                     string linkMovieAffectiva = recommendedMovieAffectiva[3];
                     setImageMovieAffectiva(linkMovieAffectiva);
- 
-
-
                 }
-
-               
-                
             }
             else if (recommandationFacebook)
             {
                 MessageBox.Show("You must log in and run details image at least once!!", "Thank you!", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
             }
-            else if(recommandationAffectiva)
+            else if (recommandationAffectiva)
             {
                 MessageBox.Show("You must log in via Facebook at least once!!", "Thank you!", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
@@ -788,7 +795,7 @@ namespace FaceRecognitionForm
             }
         }
 
-      
+
         private void btnHome_Feedback_Click(object sender, EventArgs e)
         {
             setCurrentPanel(this.panelHomePage);
@@ -813,7 +820,7 @@ namespace FaceRecognitionForm
 
         private void setImageMovieFacebook(string url)
         {
-           
+
             WebBrowser browserFacebook = new WebBrowser();
             browserFacebook.Navigate(url);
             browserFacebook.ScriptErrorsSuppressed = true;
@@ -830,7 +837,7 @@ namespace FaceRecognitionForm
 
         private void browserFacebook_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            
+
             var browser = (WebBrowser)sender;
             var client = new WebClient();
             foreach (var img in browser.Document.Images)
@@ -844,7 +851,7 @@ namespace FaceRecognitionForm
                     client.DownloadFile(new Uri(srcPath), imagePath);
                     this.pictureBox_TabFacebook.Image = Utilities.GetCopyImage(imagePath);
                     this.isAffectivaReady = true;
- 
+
                 }
             }
         }
@@ -861,7 +868,7 @@ namespace FaceRecognitionForm
                 {
                     var srcPath = image.GetAttribute("src").TrimEnd('/');
                     var imagePath = Application.StartupPath + ConfigurationManager.AppSettings["imageAffectivaTab"];
-                    client.DownloadFile(new Uri(srcPath), imagePath);             
+                    client.DownloadFile(new Uri(srcPath), imagePath);
                     this.pictureBox_TabAffectiva.Image = Utilities.GetCopyImage(imagePath); ;
                 }
             }
@@ -874,9 +881,10 @@ namespace FaceRecognitionForm
             ppd.ShowDialog();
         }
 
-        private void pictureBox_TabAffectiva_Click(object sender, EventArgs e)
+        private void tabRecommandation_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+                if(tabRecommandation.SelectedTab.TabIndex == 0)
+                    tabPage1.Visible = tabFacebook;
         }
     }
 }

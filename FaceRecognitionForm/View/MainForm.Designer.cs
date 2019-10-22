@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelHomePage = new System.Windows.Forms.Panel();
             this.btnRecommandation_HomePage = new System.Windows.Forms.Button();
             this.btnFeedback_HomePage = new System.Windows.Forms.Button();
@@ -366,23 +366,23 @@
             // 
             // chartFeedback_Feedback
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartFeedback_Feedback.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartFeedback_Feedback.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chartFeedback_Feedback.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartFeedback_Feedback.Legends.Add(legend5);
             this.chartFeedback_Feedback.Location = new System.Drawing.Point(72, 38);
             this.chartFeedback_Feedback.Name = "chartFeedback_Feedback";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series";
-            series2.YValuesPerPoint = 2;
-            this.chartFeedback_Feedback.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Series";
+            series5.YValuesPerPoint = 2;
+            this.chartFeedback_Feedback.Series.Add(series5);
             this.chartFeedback_Feedback.Size = new System.Drawing.Size(798, 401);
             this.chartFeedback_Feedback.TabIndex = 0;
             this.chartFeedback_Feedback.Text = "chartFeedback_Feedback";
-            title2.Name = "Feedback Recommandation";
-            this.chartFeedback_Feedback.Titles.Add(title2);
+            title5.Name = "Feedback Recommandation";
+            this.chartFeedback_Feedback.Titles.Add(title5);
             // 
             // panelPhoto
             // 
@@ -1735,6 +1735,7 @@
             this.tabRecommandation.SelectedIndex = 0;
             this.tabRecommandation.Size = new System.Drawing.Size(910, 406);
             this.tabRecommandation.TabIndex = 18;
+            this.tabRecommandation.SelectedIndexChanged += new System.EventHandler(this.tabRecommandation_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -1866,7 +1867,6 @@
             this.pictureBox_TabAffectiva.Size = new System.Drawing.Size(232, 356);
             this.pictureBox_TabAffectiva.TabIndex = 18;
             this.pictureBox_TabAffectiva.TabStop = false;
-            this.pictureBox_TabAffectiva.Click += new System.EventHandler(this.pictureBox_TabAffectiva_Click);
             // 
             // lblRecom2_Recommandation
             // 
@@ -2003,16 +2003,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 612);
-            this.Controls.Add(this.panelPerson);
-            this.Controls.Add(this.panelFeedback);
-            this.Controls.Add(this.panelHomePage);
-            this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.panelRecommendation);
             this.Controls.Add(this.panelUserDataFacebook);
             this.Controls.Add(this.panelLoginFacebook);
             this.Controls.Add(this.panelDelete);
             this.Controls.Add(this.panelPhoto);
             this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panelPerson);
+            this.Controls.Add(this.panelFeedback);
+            this.Controls.Add(this.panelHomePage);
+            this.Controls.Add(this.panelRegister);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
