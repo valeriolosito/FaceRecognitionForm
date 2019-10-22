@@ -701,7 +701,7 @@ namespace FaceRecognitionForm
                 chartFeedback_Feedback.Series["Series"].Points.AddXY("YES", Math.Truncate(100 * (Decimal.Parse(ret[0].ToString()) / Decimal.Parse(ret[2].ToString()) * 100)) / 100);
                 chartFeedback_Feedback.Series["Series"].Points.AddXY("NO", Math.Truncate(100 * (Decimal.Parse(ret[1].ToString()) / Decimal.Parse(ret[2].ToString()) * 100)) / 100);
             }
-
+            chartFeedback_Feedback.Series["Series"].LabelFormat = "{#'%'}";
             chartFeedback_Feedback.Series["Series"].IsValueShownAsLabel = true;
 
 
