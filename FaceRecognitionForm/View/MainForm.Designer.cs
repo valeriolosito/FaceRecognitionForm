@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelHomePage = new System.Windows.Forms.Panel();
             this.btnRecommandation_HomePage = new System.Windows.Forms.Button();
             this.btnFeedback_HomePage = new System.Windows.Forms.Button();
@@ -220,10 +220,13 @@
             // 
             this.btnRecommandation_HomePage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecommandation_HomePage.Location = new System.Drawing.Point(224, 313);
+            this.btnRecommandation_HomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecommandation_HomePage.Image = ((System.Drawing.Image)(resources.GetObject("btnRecommandation_HomePage.Image")));
+            this.btnRecommandation_HomePage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecommandation_HomePage.Location = new System.Drawing.Point(271, 308);
             this.btnRecommandation_HomePage.Margin = new System.Windows.Forms.Padding(0);
             this.btnRecommandation_HomePage.Name = "btnRecommandation_HomePage";
-            this.btnRecommandation_HomePage.Size = new System.Drawing.Size(464, 57);
+            this.btnRecommandation_HomePage.Size = new System.Drawing.Size(365, 67);
             this.btnRecommandation_HomePage.TabIndex = 7;
             this.btnRecommandation_HomePage.Text = "Show Raccomandation";
             this.btnRecommandation_HomePage.UseVisualStyleBackColor = true;
@@ -233,10 +236,13 @@
             // 
             this.btnFeedback_HomePage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFeedback_HomePage.Location = new System.Drawing.Point(224, 410);
+            this.btnFeedback_HomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback_HomePage.Image = ((System.Drawing.Image)(resources.GetObject("btnFeedback_HomePage.Image")));
+            this.btnFeedback_HomePage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFeedback_HomePage.Location = new System.Drawing.Point(271, 408);
             this.btnFeedback_HomePage.Margin = new System.Windows.Forms.Padding(0);
             this.btnFeedback_HomePage.Name = "btnFeedback_HomePage";
-            this.btnFeedback_HomePage.Size = new System.Drawing.Size(464, 57);
+            this.btnFeedback_HomePage.Size = new System.Drawing.Size(365, 61);
             this.btnFeedback_HomePage.TabIndex = 6;
             this.btnFeedback_HomePage.Text = "Show Feedback Result";
             this.btnFeedback_HomePage.UseVisualStyleBackColor = true;
@@ -246,6 +252,7 @@
             // 
             this.btnDelete_HomePage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete_HomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete_HomePage.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete_HomePage.Image")));
             this.btnDelete_HomePage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete_HomePage.Location = new System.Drawing.Point(464, 109);
@@ -274,13 +281,16 @@
             // 
             this.btnLogin_HomePage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogin_HomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin_HomePage.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin_HomePage.Image")));
             this.btnLogin_HomePage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin_HomePage.Location = new System.Drawing.Point(464, 202);
             this.btnLogin_HomePage.Margin = new System.Windows.Forms.Padding(0);
             this.btnLogin_HomePage.Name = "btnLogin_HomePage";
             this.btnLogin_HomePage.Size = new System.Drawing.Size(275, 77);
             this.btnLogin_HomePage.TabIndex = 3;
-            this.btnLogin_HomePage.Text = "Login";
+            this.btnLogin_HomePage.Text = "                      Login";
+            this.btnLogin_HomePage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin_HomePage.UseVisualStyleBackColor = true;
             this.btnLogin_HomePage.Click += new System.EventHandler(this.btnLogin_HomePage_Click);
             // 
@@ -288,6 +298,7 @@
             // 
             this.btnRegister_HomePage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister_HomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister_HomePage.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister_HomePage.Image")));
             this.btnRegister_HomePage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegister_HomePage.Location = new System.Drawing.Point(181, 109);
@@ -303,6 +314,7 @@
             // 
             this.btnFacebookLogin_HomePage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFacebookLogin_HomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacebookLogin_HomePage.Image = ((System.Drawing.Image)(resources.GetObject("btnFacebookLogin_HomePage.Image")));
             this.btnFacebookLogin_HomePage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFacebookLogin_HomePage.Location = new System.Drawing.Point(181, 200);
@@ -310,7 +322,7 @@
             this.btnFacebookLogin_HomePage.Name = "btnFacebookLogin_HomePage";
             this.btnFacebookLogin_HomePage.Size = new System.Drawing.Size(266, 79);
             this.btnFacebookLogin_HomePage.TabIndex = 0;
-            this.btnFacebookLogin_HomePage.Text = "Facebook Login";
+            this.btnFacebookLogin_HomePage.Text = "              Facebook Login";
             this.btnFacebookLogin_HomePage.UseVisualStyleBackColor = true;
             this.btnFacebookLogin_HomePage.Click += new System.EventHandler(this.btnFacebookLogin_HomePage_Click);
             // 
@@ -328,47 +340,49 @@
             // 
             // btnStampa_Feedback
             // 
+            this.btnStampa_Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStampa_Feedback.Image = ((System.Drawing.Image)(resources.GetObject("btnStampa_Feedback.Image")));
             this.btnStampa_Feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStampa_Feedback.Location = new System.Drawing.Point(479, 528);
             this.btnStampa_Feedback.Name = "btnStampa_Feedback";
             this.btnStampa_Feedback.Size = new System.Drawing.Size(121, 35);
             this.btnStampa_Feedback.TabIndex = 2;
-            this.btnStampa_Feedback.Text = "      Stampa Grafico";
+            this.btnStampa_Feedback.Text = "      Print Chart";
             this.btnStampa_Feedback.UseVisualStyleBackColor = true;
             this.btnStampa_Feedback.Click += new System.EventHandler(this.btnStampa_Feedback_Click);
             // 
             // btnHome_Feedback
             // 
+            this.btnHome_Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome_Feedback.Image = ((System.Drawing.Image)(resources.GetObject("btnHome_Feedback.Image")));
             this.btnHome_Feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome_Feedback.Location = new System.Drawing.Point(348, 528);
             this.btnHome_Feedback.Name = "btnHome_Feedback";
             this.btnHome_Feedback.Size = new System.Drawing.Size(94, 35);
             this.btnHome_Feedback.TabIndex = 1;
-            this.btnHome_Feedback.Text = "Home";
+            this.btnHome_Feedback.Text = "    Home";
             this.btnHome_Feedback.UseVisualStyleBackColor = true;
             this.btnHome_Feedback.Click += new System.EventHandler(this.btnHome_Feedback_Click);
             // 
             // chartFeedback_Feedback
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartFeedback_Feedback.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartFeedback_Feedback.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.chartFeedback_Feedback.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartFeedback_Feedback.Legends.Add(legend2);
             this.chartFeedback_Feedback.Location = new System.Drawing.Point(72, 38);
             this.chartFeedback_Feedback.Name = "chartFeedback_Feedback";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series";
-            series3.YValuesPerPoint = 2;
-            this.chartFeedback_Feedback.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series";
+            series2.YValuesPerPoint = 2;
+            this.chartFeedback_Feedback.Series.Add(series2);
             this.chartFeedback_Feedback.Size = new System.Drawing.Size(798, 401);
             this.chartFeedback_Feedback.TabIndex = 0;
             this.chartFeedback_Feedback.Text = "chartFeedback_Feedback";
-            title3.Name = "Feedback Recommandation";
-            this.chartFeedback_Feedback.Titles.Add(title3);
+            title2.Name = "Feedback Recommandation";
+            this.chartFeedback_Feedback.Titles.Add(title2);
             // 
             // panelPhoto
             // 
@@ -400,11 +414,14 @@
             // btnTakePicture_Photo
             // 
             this.btnTakePicture_Photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTakePicture_Photo.Image = ((System.Drawing.Image)(resources.GetObject("btnTakePicture_Photo.Image")));
+            this.btnTakePicture_Photo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTakePicture_Photo.Location = new System.Drawing.Point(10, 179);
             this.btnTakePicture_Photo.Name = "btnTakePicture_Photo";
-            this.btnTakePicture_Photo.Size = new System.Drawing.Size(188, 41);
+            this.btnTakePicture_Photo.Size = new System.Drawing.Size(196, 50);
             this.btnTakePicture_Photo.TabIndex = 2;
             this.btnTakePicture_Photo.Text = "Take a picture";
+            this.btnTakePicture_Photo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTakePicture_Photo.UseVisualStyleBackColor = true;
             this.btnTakePicture_Photo.Click += new System.EventHandler(this.btnTakePicture_Photo_Click);
             // 
@@ -434,10 +451,12 @@
             this.btnFinish_Photo.AutoSize = true;
             this.btnFinish_Photo.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnFinish_Photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinish_Photo.Location = new System.Drawing.Point(7, 501);
+            this.btnFinish_Photo.Image = ((System.Drawing.Image)(resources.GetObject("btnFinish_Photo.Image")));
+            this.btnFinish_Photo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinish_Photo.Location = new System.Drawing.Point(7, 490);
             this.btnFinish_Photo.Margin = new System.Windows.Forms.Padding(0);
             this.btnFinish_Photo.Name = "btnFinish_Photo";
-            this.btnFinish_Photo.Size = new System.Drawing.Size(188, 43);
+            this.btnFinish_Photo.Size = new System.Drawing.Size(196, 54);
             this.btnFinish_Photo.TabIndex = 5;
             this.btnFinish_Photo.Text = "Finish";
             this.btnFinish_Photo.UseVisualStyleBackColor = true;
@@ -545,10 +564,13 @@
             // 
             this.btnRegister_Register.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister_Register.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister_Register.Image")));
+            this.btnRegister_Register.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegister_Register.Location = new System.Drawing.Point(664, 504);
             this.btnRegister_Register.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister_Register.Name = "btnRegister_Register";
-            this.btnRegister_Register.Size = new System.Drawing.Size(188, 41);
+            this.btnRegister_Register.Size = new System.Drawing.Size(188, 59);
             this.btnRegister_Register.TabIndex = 22;
             this.btnRegister_Register.Text = "Register";
             this.btnRegister_Register.UseVisualStyleBackColor = true;
@@ -558,12 +580,15 @@
             // 
             this.btnAddPhoto_Register.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddPhoto_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPhoto_Register.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPhoto_Register.Image")));
+            this.btnAddPhoto_Register.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddPhoto_Register.Location = new System.Drawing.Point(378, 504);
             this.btnAddPhoto_Register.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddPhoto_Register.Name = "btnAddPhoto_Register";
-            this.btnAddPhoto_Register.Size = new System.Drawing.Size(188, 41);
+            this.btnAddPhoto_Register.Size = new System.Drawing.Size(188, 59);
             this.btnAddPhoto_Register.TabIndex = 21;
-            this.btnAddPhoto_Register.Text = "Add Photo";
+            this.btnAddPhoto_Register.Text = "     Add Photo";
             this.btnAddPhoto_Register.UseVisualStyleBackColor = true;
             this.btnAddPhoto_Register.Click += new System.EventHandler(this.btnAddPhoto_Register_Click);
             // 
@@ -571,12 +596,15 @@
             // 
             this.btnPrevious_Register.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrevious_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious_Register.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious_Register.Image")));
+            this.btnPrevious_Register.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrevious_Register.Location = new System.Drawing.Point(99, 504);
             this.btnPrevious_Register.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrevious_Register.Name = "btnPrevious_Register";
-            this.btnPrevious_Register.Size = new System.Drawing.Size(188, 41);
+            this.btnPrevious_Register.Size = new System.Drawing.Size(188, 59);
             this.btnPrevious_Register.TabIndex = 23;
-            this.btnPrevious_Register.Text = "<<Previous";
+            this.btnPrevious_Register.Text = "    Previous";
             this.btnPrevious_Register.UseVisualStyleBackColor = true;
             this.btnPrevious_Register.Click += new System.EventHandler(this.btnPrevious_Register_Click);
             // 
@@ -721,11 +749,14 @@
             // 
             // btnPrevious_Delete
             // 
-            this.btnPrevious_Delete.Location = new System.Drawing.Point(285, 327);
+            this.btnPrevious_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious_Delete.Image")));
+            this.btnPrevious_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrevious_Delete.Location = new System.Drawing.Point(308, 325);
             this.btnPrevious_Delete.Name = "btnPrevious_Delete";
-            this.btnPrevious_Delete.Size = new System.Drawing.Size(119, 38);
+            this.btnPrevious_Delete.Size = new System.Drawing.Size(134, 50);
             this.btnPrevious_Delete.TabIndex = 4;
-            this.btnPrevious_Delete.Text = "<< Previous";
+            this.btnPrevious_Delete.Text = "            Previous";
             this.btnPrevious_Delete.UseVisualStyleBackColor = true;
             this.btnPrevious_Delete.Click += new System.EventHandler(this.btnPrevious_Delete_Click);
             // 
@@ -741,11 +772,14 @@
             // 
             // btnDeleteUser_Delete
             // 
-            this.btnDeleteUser_Delete.Location = new System.Drawing.Point(509, 326);
+            this.btnDeleteUser_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteUser_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteUser_Delete.Image")));
+            this.btnDeleteUser_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteUser_Delete.Location = new System.Drawing.Point(502, 327);
             this.btnDeleteUser_Delete.Name = "btnDeleteUser_Delete";
-            this.btnDeleteUser_Delete.Size = new System.Drawing.Size(119, 39);
+            this.btnDeleteUser_Delete.Size = new System.Drawing.Size(134, 49);
             this.btnDeleteUser_Delete.TabIndex = 2;
-            this.btnDeleteUser_Delete.Text = "Delete User";
+            this.btnDeleteUser_Delete.Text = "        Delete User";
             this.btnDeleteUser_Delete.UseVisualStyleBackColor = true;
             this.btnDeleteUser_Delete.Click += new System.EventHandler(this.btnDeleteUser_Delete_Click);
             // 
@@ -803,10 +837,13 @@
             // 
             // btnLogin_Login
             // 
+            this.btnLogin_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin_Login.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin_Login.Image")));
+            this.btnLogin_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin_Login.Location = new System.Drawing.Point(18, 98);
             this.btnLogin_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin_Login.Name = "btnLogin_Login";
-            this.btnLogin_Login.Size = new System.Drawing.Size(188, 41);
+            this.btnLogin_Login.Size = new System.Drawing.Size(188, 66);
             this.btnLogin_Login.TabIndex = 2;
             this.btnLogin_Login.Text = "Login";
             this.btnLogin_Login.UseVisualStyleBackColor = true;
@@ -815,12 +852,15 @@
             // btnPreviuos_Login
             // 
             this.btnPreviuos_Login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPreviuos_Login.Location = new System.Drawing.Point(18, 522);
+            this.btnPreviuos_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviuos_Login.Image = ((System.Drawing.Image)(resources.GetObject("btnPreviuos_Login.Image")));
+            this.btnPreviuos_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPreviuos_Login.Location = new System.Drawing.Point(20, 512);
             this.btnPreviuos_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btnPreviuos_Login.Name = "btnPreviuos_Login";
-            this.btnPreviuos_Login.Size = new System.Drawing.Size(188, 41);
+            this.btnPreviuos_Login.Size = new System.Drawing.Size(188, 52);
             this.btnPreviuos_Login.TabIndex = 1;
-            this.btnPreviuos_Login.Text = "<<Previous";
+            this.btnPreviuos_Login.Text = "Previous";
             this.btnPreviuos_Login.UseVisualStyleBackColor = true;
             this.btnPreviuos_Login.Click += new System.EventHandler(this.btnPreviuos_Login_Click);
             // 
@@ -1118,12 +1158,15 @@
             // 
             // btnAffectiva
             // 
-            this.btnAffectiva.Location = new System.Drawing.Point(737, 380);
+            this.btnAffectiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAffectiva.Image = ((System.Drawing.Image)(resources.GetObject("btnAffectiva.Image")));
+            this.btnAffectiva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAffectiva.Location = new System.Drawing.Point(737, 368);
             this.btnAffectiva.Margin = new System.Windows.Forms.Padding(2);
             this.btnAffectiva.Name = "btnAffectiva";
-            this.btnAffectiva.Size = new System.Drawing.Size(188, 41);
+            this.btnAffectiva.Size = new System.Drawing.Size(188, 53);
             this.btnAffectiva.TabIndex = 20;
-            this.btnAffectiva.Text = "Details Image";
+            this.btnAffectiva.Text = "  Details Image";
             this.btnAffectiva.UseVisualStyleBackColor = true;
             this.btnAffectiva.Click += new System.EventHandler(this.btnAffectiva_Click);
             // 
@@ -1141,6 +1184,9 @@
             // 
             // btnHomePage_Person
             // 
+            this.btnHomePage_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomePage_Person.Image = ((System.Drawing.Image)(resources.GetObject("btnHomePage_Person.Image")));
+            this.btnHomePage_Person.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHomePage_Person.Location = new System.Drawing.Point(28, 544);
             this.btnHomePage_Person.Margin = new System.Windows.Forms.Padding(2);
             this.btnHomePage_Person.Name = "btnHomePage_Person";
@@ -1155,7 +1201,7 @@
             this.txtProfession_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProfession_Person.Enabled = false;
             this.txtProfession_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProfession_Person.Location = new System.Drawing.Point(149, 325);
+            this.txtProfession_Person.Location = new System.Drawing.Point(149, 313);
             this.txtProfession_Person.Margin = new System.Windows.Forms.Padding(0);
             this.txtProfession_Person.Multiline = true;
             this.txtProfession_Person.Name = "txtProfession_Person";
@@ -1167,7 +1213,7 @@
             // 
             this.lblProfession_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProfession_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfession_Person.Location = new System.Drawing.Point(30, 325);
+            this.lblProfession_Person.Location = new System.Drawing.Point(21, 315);
             this.lblProfession_Person.Margin = new System.Windows.Forms.Padding(0);
             this.lblProfession_Person.Name = "lblProfession_Person";
             this.lblProfession_Person.Size = new System.Drawing.Size(223, 28);
@@ -1191,7 +1237,7 @@
             // 
             this.lblTelephone_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelephone_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephone_Person.Location = new System.Drawing.Point(30, 268);
+            this.lblTelephone_Person.Location = new System.Drawing.Point(22, 256);
             this.lblTelephone_Person.Margin = new System.Windows.Forms.Padding(0);
             this.lblTelephone_Person.Name = "lblTelephone_Person";
             this.lblTelephone_Person.Size = new System.Drawing.Size(223, 28);
@@ -1215,7 +1261,7 @@
             // 
             this.lblCity_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCity_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity_Person.Location = new System.Drawing.Point(30, 200);
+            this.lblCity_Person.Location = new System.Drawing.Point(24, 202);
             this.lblCity_Person.Margin = new System.Windows.Forms.Padding(0);
             this.lblCity_Person.Name = "lblCity_Person";
             this.lblCity_Person.Size = new System.Drawing.Size(223, 28);
@@ -1239,7 +1285,7 @@
             // 
             this.lblAddress_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress_Person.Location = new System.Drawing.Point(30, 154);
+            this.lblAddress_Person.Location = new System.Drawing.Point(24, 142);
             this.lblAddress_Person.Margin = new System.Windows.Forms.Padding(0);
             this.lblAddress_Person.Name = "lblAddress_Person";
             this.lblAddress_Person.Size = new System.Drawing.Size(223, 28);
@@ -1263,7 +1309,7 @@
             // 
             this.lblSurname_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSurname_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname_Person.Location = new System.Drawing.Point(30, 86);
+            this.lblSurname_Person.Location = new System.Drawing.Point(21, 87);
             this.lblSurname_Person.Margin = new System.Windows.Forms.Padding(0);
             this.lblSurname_Person.Name = "lblSurname_Person";
             this.lblSurname_Person.Size = new System.Drawing.Size(223, 28);
@@ -1275,7 +1321,7 @@
             this.txtName_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName_Person.Enabled = false;
             this.txtName_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName_Person.Location = new System.Drawing.Point(149, 41);
+            this.txtName_Person.Location = new System.Drawing.Point(149, 31);
             this.txtName_Person.Margin = new System.Windows.Forms.Padding(0);
             this.txtName_Person.Multiline = true;
             this.txtName_Person.Name = "txtName_Person";
@@ -1287,7 +1333,7 @@
             // 
             this.lblName_Person.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName_Person.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName_Person.Location = new System.Drawing.Point(30, 28);
+            this.lblName_Person.Location = new System.Drawing.Point(24, 31);
             this.lblName_Person.Margin = new System.Windows.Forms.Padding(0);
             this.lblName_Person.Name = "lblName_Person";
             this.lblName_Person.Size = new System.Drawing.Size(223, 28);
@@ -1309,12 +1355,15 @@
             // 
             this.btnPrevious_LoginFacebook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrevious_LoginFacebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious_LoginFacebook.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious_LoginFacebook.Image")));
+            this.btnPrevious_LoginFacebook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrevious_LoginFacebook.Location = new System.Drawing.Point(18, 522);
             this.btnPrevious_LoginFacebook.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrevious_LoginFacebook.Name = "btnPrevious_LoginFacebook";
-            this.btnPrevious_LoginFacebook.Size = new System.Drawing.Size(188, 41);
+            this.btnPrevious_LoginFacebook.Size = new System.Drawing.Size(188, 52);
             this.btnPrevious_LoginFacebook.TabIndex = 1;
-            this.btnPrevious_LoginFacebook.Text = "<< Previous";
+            this.btnPrevious_LoginFacebook.Text = "     Previous";
             this.btnPrevious_LoginFacebook.UseVisualStyleBackColor = true;
             this.btnPrevious_LoginFacebook.Click += new System.EventHandler(this.btnPrevious_LoginFacebook_Click);
             // 
@@ -1544,11 +1593,13 @@
             // 
             this.btnOK_UserDataFacebook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK_UserDataFacebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK_UserDataFacebook.Image = ((System.Drawing.Image)(resources.GetObject("btnOK_UserDataFacebook.Image")));
             this.btnOK_UserDataFacebook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK_UserDataFacebook.Location = new System.Drawing.Point(30, 544);
+            this.btnOK_UserDataFacebook.Location = new System.Drawing.Point(30, 534);
             this.btnOK_UserDataFacebook.Margin = new System.Windows.Forms.Padding(0);
             this.btnOK_UserDataFacebook.Name = "btnOK_UserDataFacebook";
-            this.btnOK_UserDataFacebook.Size = new System.Drawing.Size(188, 28);
+            this.btnOK_UserDataFacebook.Size = new System.Drawing.Size(107, 40);
             this.btnOK_UserDataFacebook.TabIndex = 13;
             this.btnOK_UserDataFacebook.Text = "Home";
             this.btnOK_UserDataFacebook.UseVisualStyleBackColor = true;
@@ -1561,9 +1612,9 @@
             this.lblAmici_UserDataFacebook.Location = new System.Drawing.Point(30, 232);
             this.lblAmici_UserDataFacebook.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmici_UserDataFacebook.Name = "lblAmici_UserDataFacebook";
-            this.lblAmici_UserDataFacebook.Size = new System.Drawing.Size(225, 28);
+            this.lblAmici_UserDataFacebook.Size = new System.Drawing.Size(282, 28);
             this.lblAmici_UserDataFacebook.TabIndex = 11;
-            this.lblAmici_UserDataFacebook.Text = "Amici che hanno l\'App";
+            this.lblAmici_UserDataFacebook.Text = "Friends with App";
             // 
             // txtGender_UserDataFacebook
             // 
@@ -1586,7 +1637,7 @@
             this.lblGender_UserDataFacebook.Name = "lblGender_UserDataFacebook";
             this.lblGender_UserDataFacebook.Size = new System.Drawing.Size(225, 28);
             this.lblGender_UserDataFacebook.TabIndex = 9;
-            this.lblGender_UserDataFacebook.Text = "Sesso";
+            this.lblGender_UserDataFacebook.Text = "Sex";
             // 
             // txtEmail_UserDataFacebook
             // 
@@ -1632,7 +1683,7 @@
             this.lblDataNascita_UserDataFacebook.Name = "lblDataNascita_UserDataFacebook";
             this.lblDataNascita_UserDataFacebook.Size = new System.Drawing.Size(225, 28);
             this.lblDataNascita_UserDataFacebook.TabIndex = 5;
-            this.lblDataNascita_UserDataFacebook.Text = "Data di Nascita";
+            this.lblDataNascita_UserDataFacebook.Text = "Date of birth";
             // 
             // listView_UserDataFacebook
             // 
@@ -1651,7 +1702,7 @@
             // 
             this.pictureBox_UserDataFacebook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox_UserDataFacebook.Location = new System.Drawing.Point(30, 0);
+            this.pictureBox_UserDataFacebook.Location = new System.Drawing.Point(30, 7);
             this.pictureBox_UserDataFacebook.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_UserDataFacebook.Name = "pictureBox_UserDataFacebook";
             this.pictureBox_UserDataFacebook.Size = new System.Drawing.Size(191, 215);
@@ -1701,19 +1752,21 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(902, 380);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Facebook Recomandation";
+            this.tabPage1.Text = "Facebook Recommandation";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // linkGoogle1_Recommandation
             // 
             this.linkGoogle1_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkGoogle1_Recommandation.Image = ((System.Drawing.Image)(resources.GetObject("linkGoogle1_Recommandation.Image")));
+            this.linkGoogle1_Recommandation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkGoogle1_Recommandation.Location = new System.Drawing.Point(75, 301);
             this.linkGoogle1_Recommandation.Name = "linkGoogle1_Recommandation";
             this.linkGoogle1_Recommandation.Size = new System.Drawing.Size(225, 28);
             this.linkGoogle1_Recommandation.TabIndex = 16;
             this.linkGoogle1_Recommandation.TabStop = true;
-            this.linkGoogle1_Recommandation.Text = "Cerca su Google...";
-            this.linkGoogle1_Recommandation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkGoogle1_Recommandation.Text = "                  Search";
+            this.linkGoogle1_Recommandation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkGoogle1_Recommandation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGoogle1_Recommandation_LinkClicked);
             // 
             // lblActors1_Recommandation
@@ -1777,7 +1830,7 @@
             // 
             this.pictureBox_TabFacebook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_TabFacebook.Location = new System.Drawing.Point(579, 11);
+            this.pictureBox_TabFacebook.Location = new System.Drawing.Point(612, 11);
             this.pictureBox_TabFacebook.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_TabFacebook.Name = "pictureBox_TabFacebook";
             this.pictureBox_TabFacebook.Size = new System.Drawing.Size(232, 356);
@@ -1800,19 +1853,20 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(902, 380);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Affectiva Recomandation";
+            this.tabPage2.Text = "Affectiva Recommandation";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // pictureBox_TabAffectiva
             // 
             this.pictureBox_TabAffectiva.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_TabAffectiva.Location = new System.Drawing.Point(664, 11);
+            this.pictureBox_TabAffectiva.Location = new System.Drawing.Point(612, 11);
             this.pictureBox_TabAffectiva.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_TabAffectiva.Name = "pictureBox_TabAffectiva";
             this.pictureBox_TabAffectiva.Size = new System.Drawing.Size(232, 356);
             this.pictureBox_TabAffectiva.TabIndex = 18;
             this.pictureBox_TabAffectiva.TabStop = false;
+            this.pictureBox_TabAffectiva.Click += new System.EventHandler(this.pictureBox_TabAffectiva_Click);
             // 
             // lblRecom2_Recommandation
             // 
@@ -1826,13 +1880,15 @@
             // linkGoogle2_Recommandation
             // 
             this.linkGoogle2_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkGoogle2_Recommandation.Image = ((System.Drawing.Image)(resources.GetObject("linkGoogle2_Recommandation.Image")));
+            this.linkGoogle2_Recommandation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkGoogle2_Recommandation.Location = new System.Drawing.Point(75, 301);
             this.linkGoogle2_Recommandation.Name = "linkGoogle2_Recommandation";
             this.linkGoogle2_Recommandation.Size = new System.Drawing.Size(225, 28);
             this.linkGoogle2_Recommandation.TabIndex = 17;
             this.linkGoogle2_Recommandation.TabStop = true;
-            this.linkGoogle2_Recommandation.Text = "Cerca su Google...";
-            this.linkGoogle2_Recommandation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkGoogle2_Recommandation.Text = "                  Search";
+            this.linkGoogle2_Recommandation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.linkGoogle2_Recommandation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGoogle2_Recommandation_LinkClicked);
             // 
             // lblTitle2_Recommandation
@@ -1885,33 +1941,40 @@
             // 
             // btnHome_Recommandation
             // 
+            this.btnHome_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome_Recommandation.Image = ((System.Drawing.Image)(resources.GetObject("btnHome_Recommandation.Image")));
+            this.btnHome_Recommandation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome_Recommandation.Location = new System.Drawing.Point(416, 545);
             this.btnHome_Recommandation.Name = "btnHome_Recommandation";
             this.btnHome_Recommandation.Size = new System.Drawing.Size(135, 39);
             this.btnHome_Recommandation.TabIndex = 15;
-            this.btnHome_Recommandation.Text = "Home Page";
+            this.btnHome_Recommandation.Text = "    Home Page";
             this.btnHome_Recommandation.UseVisualStyleBackColor = true;
             this.btnHome_Recommandation.Click += new System.EventHandler(this.btnHome_Recommandation_Click);
             // 
             // btnFeedbackKO_Recommandation
             // 
             this.btnFeedbackKO_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedbackKO_Recommandation.Image = ((System.Drawing.Image)(resources.GetObject("btnFeedbackKO_Recommandation.Image")));
+            this.btnFeedbackKO_Recommandation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFeedbackKO_Recommandation.Location = new System.Drawing.Point(524, 451);
             this.btnFeedbackKO_Recommandation.Name = "btnFeedbackKO_Recommandation";
-            this.btnFeedbackKO_Recommandation.Size = new System.Drawing.Size(104, 34);
+            this.btnFeedbackKO_Recommandation.Size = new System.Drawing.Size(104, 65);
             this.btnFeedbackKO_Recommandation.TabIndex = 8;
-            this.btnFeedbackKO_Recommandation.Text = "No";
+            this.btnFeedbackKO_Recommandation.Text = "    No";
             this.btnFeedbackKO_Recommandation.UseVisualStyleBackColor = true;
             this.btnFeedbackKO_Recommandation.Click += new System.EventHandler(this.btnFeedbackKO_Recommandation_Click);
             // 
             // btnFeedbackOK_Recommandation
             // 
             this.btnFeedbackOK_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedbackOK_Recommandation.Image = ((System.Drawing.Image)(resources.GetObject("btnFeedbackOK_Recommandation.Image")));
+            this.btnFeedbackOK_Recommandation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFeedbackOK_Recommandation.Location = new System.Drawing.Point(354, 451);
             this.btnFeedbackOK_Recommandation.Name = "btnFeedbackOK_Recommandation";
-            this.btnFeedbackOK_Recommandation.Size = new System.Drawing.Size(104, 34);
+            this.btnFeedbackOK_Recommandation.Size = new System.Drawing.Size(104, 65);
             this.btnFeedbackOK_Recommandation.TabIndex = 7;
-            this.btnFeedbackOK_Recommandation.Text = "Yes";
+            this.btnFeedbackOK_Recommandation.Text = "         Yes";
             this.btnFeedbackOK_Recommandation.UseVisualStyleBackColor = true;
             this.btnFeedbackOK_Recommandation.Click += new System.EventHandler(this.btnFeedbackOK_Recommandation_Click);
             // 
@@ -1919,7 +1982,7 @@
             // 
             this.lblFeedback_Recommandation.AutoSize = true;
             this.lblFeedback_Recommandation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFeedback_Recommandation.Location = new System.Drawing.Point(23, 457);
+            this.lblFeedback_Recommandation.Location = new System.Drawing.Point(23, 471);
             this.lblFeedback_Recommandation.Name = "lblFeedback_Recommandation";
             this.lblFeedback_Recommandation.Size = new System.Drawing.Size(298, 20);
             this.lblFeedback_Recommandation.TabIndex = 6;
@@ -1940,6 +2003,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 612);
+            this.Controls.Add(this.panelPerson);
+            this.Controls.Add(this.panelFeedback);
             this.Controls.Add(this.panelHomePage);
             this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.panelRecommendation);
@@ -1948,8 +2013,6 @@
             this.Controls.Add(this.panelDelete);
             this.Controls.Add(this.panelPhoto);
             this.Controls.Add(this.panelLogin);
-            this.Controls.Add(this.panelPerson);
-            this.Controls.Add(this.panelFeedback);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

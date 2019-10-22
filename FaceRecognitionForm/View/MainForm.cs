@@ -873,6 +873,11 @@ namespace FaceRecognitionForm
             ppd.Document = chartFeedback_Feedback.Printing.PrintDocument;
             ppd.ShowDialog();
         }
+
+        private void pictureBox_TabAffectiva_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
