@@ -47,10 +47,11 @@ namespace FaceRecognitionForm.Service
                         {
                             Name = reader[2].ToString(),
                             Surname = reader[3].ToString(),
-                            Address = reader[4].ToString(),
-                            City = reader[5].ToString(),
-                            Telephone = reader[6].ToString(),
-                            Profession = reader[7].ToString()
+                            Cf = reader[4].ToString(),
+                            Address = reader[5].ToString(),
+                            City = reader[6].ToString(),
+                            Telephone = reader[7].ToString(),
+                            Profession = reader[8].ToString()
                         };
                         listPerson.Add(p);
                     }

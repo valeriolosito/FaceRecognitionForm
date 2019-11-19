@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelHomePage = new System.Windows.Forms.Panel();
             this.btnRecommandation_HomePage = new System.Windows.Forms.Button();
             this.btnFeedback_HomePage = new System.Windows.Forms.Button();
@@ -176,6 +180,8 @@
             this.lblFeedback_Recommandation = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.chartFeedbackUser_Feedback = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnStampaUser_Feedback = new System.Windows.Forms.Button();
             this.panelHomePage.SuspendLayout();
             this.panelFeedback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartFeedback_Feedback)).BeginInit();
@@ -198,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_TabFacebook)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_TabAffectiva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartFeedbackUser_Feedback)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHomePage
@@ -329,6 +336,8 @@
             // panelFeedback
             // 
             this.panelFeedback.AutoSize = true;
+            this.panelFeedback.Controls.Add(this.btnStampaUser_Feedback);
+            this.panelFeedback.Controls.Add(this.chartFeedbackUser_Feedback);
             this.panelFeedback.Controls.Add(this.btnStampa_Feedback);
             this.panelFeedback.Controls.Add(this.btnHome_Feedback);
             this.panelFeedback.Controls.Add(this.chartFeedback_Feedback);
@@ -343,11 +352,11 @@
             this.btnStampa_Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStampa_Feedback.Image = ((System.Drawing.Image)(resources.GetObject("btnStampa_Feedback.Image")));
             this.btnStampa_Feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStampa_Feedback.Location = new System.Drawing.Point(479, 528);
+            this.btnStampa_Feedback.Location = new System.Drawing.Point(456, 476);
             this.btnStampa_Feedback.Name = "btnStampa_Feedback";
-            this.btnStampa_Feedback.Size = new System.Drawing.Size(121, 35);
+            this.btnStampa_Feedback.Size = new System.Drawing.Size(212, 35);
             this.btnStampa_Feedback.TabIndex = 2;
-            this.btnStampa_Feedback.Text = "      Print Chart";
+            this.btnStampa_Feedback.Text = "      Print Chart All Users";
             this.btnStampa_Feedback.UseVisualStyleBackColor = true;
             this.btnStampa_Feedback.Click += new System.EventHandler(this.btnStampa_Feedback_Click);
             // 
@@ -356,7 +365,7 @@
             this.btnHome_Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome_Feedback.Image = ((System.Drawing.Image)(resources.GetObject("btnHome_Feedback.Image")));
             this.btnHome_Feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome_Feedback.Location = new System.Drawing.Point(348, 528);
+            this.btnHome_Feedback.Location = new System.Drawing.Point(399, 543);
             this.btnHome_Feedback.Name = "btnHome_Feedback";
             this.btnHome_Feedback.Size = new System.Drawing.Size(94, 35);
             this.btnHome_Feedback.TabIndex = 1;
@@ -366,23 +375,24 @@
             // 
             // chartFeedback_Feedback
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartFeedback_Feedback.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartFeedback_Feedback.Legends.Add(legend5);
-            this.chartFeedback_Feedback.Location = new System.Drawing.Point(72, 38);
+            chartArea2.Name = "ChartArea1";
+            this.chartFeedback_Feedback.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartFeedback_Feedback.Legends.Add(legend2);
+            this.chartFeedback_Feedback.Location = new System.Drawing.Point(475, 139);
             this.chartFeedback_Feedback.Name = "chartFeedback_Feedback";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Series";
-            series5.YValuesPerPoint = 2;
-            this.chartFeedback_Feedback.Series.Add(series5);
-            this.chartFeedback_Feedback.Size = new System.Drawing.Size(798, 401);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series";
+            series2.YValuesPerPoint = 2;
+            this.chartFeedback_Feedback.Series.Add(series2);
+            this.chartFeedback_Feedback.Size = new System.Drawing.Size(449, 260);
             this.chartFeedback_Feedback.TabIndex = 0;
             this.chartFeedback_Feedback.Text = "chartFeedback_Feedback";
-            title5.Name = "Feedback Recommandation";
-            this.chartFeedback_Feedback.Titles.Add(title5);
+            title2.Name = "Feedback Recommandation";
+            title2.Text = "Feedback All Users";
+            this.chartFeedback_Feedback.Titles.Add(title2);
             // 
             // panelPhoto
             // 
@@ -1998,11 +2008,48 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // chartFeedbackUser_Feedback
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartFeedbackUser_Feedback.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartFeedbackUser_Feedback.Legends.Add(legend1);
+            this.chartFeedbackUser_Feedback.Location = new System.Drawing.Point(28, 139);
+            this.chartFeedbackUser_Feedback.Name = "chartFeedbackUser_Feedback";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series";
+            series1.YValuesPerPoint = 2;
+            this.chartFeedbackUser_Feedback.Series.Add(series1);
+            this.chartFeedbackUser_Feedback.Size = new System.Drawing.Size(391, 260);
+            this.chartFeedbackUser_Feedback.TabIndex = 3;
+            this.chartFeedbackUser_Feedback.Text = "chartFeedbackUser_Feedback";
+            title1.Name = "Feedback Recommandation";
+            title1.Text = "Feedback Current User";
+            this.chartFeedbackUser_Feedback.Titles.Add(title1);
+            // 
+            // btnStampaUser_Feedback
+            // 
+            this.btnStampaUser_Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStampaUser_Feedback.Image = ((System.Drawing.Image)(resources.GetObject("btnStampaUser_Feedback.Image")));
+            this.btnStampaUser_Feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStampaUser_Feedback.Location = new System.Drawing.Point(223, 476);
+            this.btnStampaUser_Feedback.Name = "btnStampaUser_Feedback";
+            this.btnStampaUser_Feedback.Size = new System.Drawing.Size(215, 35);
+            this.btnStampaUser_Feedback.TabIndex = 4;
+            this.btnStampaUser_Feedback.Text = "      Print Chart Current User";
+            this.btnStampaUser_Feedback.UseVisualStyleBackColor = true;
+            this.btnStampaUser_Feedback.Click += new System.EventHandler(this.btnStampaUser_Feedback_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 612);
+            this.Controls.Add(this.panelFeedback);
+            this.Controls.Add(this.panelHomePage);
+            this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.panelRecommendation);
             this.Controls.Add(this.panelUserDataFacebook);
             this.Controls.Add(this.panelLoginFacebook);
@@ -2010,9 +2057,6 @@
             this.Controls.Add(this.panelPhoto);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelPerson);
-            this.Controls.Add(this.panelFeedback);
-            this.Controls.Add(this.panelHomePage);
-            this.Controls.Add(this.panelRegister);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2052,6 +2096,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_TabFacebook)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_TabAffectiva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartFeedbackUser_Feedback)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2201,5 +2246,7 @@
         private System.Windows.Forms.PictureBox pictureBox_TabFacebook;
         private System.Windows.Forms.Button btnStampa_Feedback;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartFeedbackUser_Feedback;
+        private System.Windows.Forms.Button btnStampaUser_Feedback;
     }
 }

@@ -48,7 +48,7 @@ namespace FaceRecognitionForm
         private bool isAffectivaReady = false;
         private bool tabFacebook = false;
 
-
+        private string cf = String.Empty;
 
         private enum RecommandationType
         {
@@ -310,6 +310,8 @@ namespace FaceRecognitionForm
                     txtTelephone_UserDataFacebook.Text = personDataReg.Telephone;
                     txtProfession_UserDataFacebook.Text = personDataReg.Profession;
                     enabledControls(this.paneltableUserDataFacebook);
+
+                    cf = personDataReg.Cf;
                 }
                 else
                 {
@@ -363,6 +365,8 @@ namespace FaceRecognitionForm
                             this.txtTelephone_Person.Text = person.Telephone;
                             this.txtProfession_Person.Text = person.Profession;
                             this.pictureBox_Person.Image = tempImage;
+
+                            cf = person.Cf;
                         }
                     }
                     //login fallita: nessun match nel db
@@ -669,13 +673,13 @@ namespace FaceRecognitionForm
 
         private void btnFeedbackOK_Recommandation_Click(object sender, EventArgs e)
         {
-            this.feedbackService.AddFeedback("yes");
+            this.feedbackService.AddFeedback("yes", cf);
             DisableButton_Recommandation();
         }
 
         private void btnFeedbackKO_Recommandation_Click(object sender, EventArgs e)
         {
-            this.feedbackService.AddFeedback("no");
+            this.feedbackService.AddFeedback("no", cf);
             DisableButton_Recommandation();
         }
 
@@ -690,6 +694,13 @@ namespace FaceRecognitionForm
 
         private void btnFeedback_HomePage_Click(object sender, EventArgs e)
         {
+            if (cf == "")
+            {
+                MessageBox.Show("You must log in!", "Thank you!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
             setCurrentPanel(this.panelFeedback);
             chartFeedback_Feedback.Series["Series"].Points.Clear();
             var ret = feedbackService.GetFeedback();
@@ -705,11 +716,36 @@ namespace FaceRecognitionForm
             chartFeedback_Feedback.Series["Series"].IsValueShownAsLabel = true;
 
 
+            chartFeedbackUser_Feedback.Series["Series"].Points.Clear();
+            ret = feedbackService.GetFeedbackSingleUser(cf);
+            chartFeedbackUser_Feedback.Series["Series"].XValueMember = "Type of Feedback";
+            chartFeedbackUser_Feedback.Series["Series"].YValueMembers = "Percentage %";
+            //chartFeedback_Feedback.Titles.Add("Feedback Percentage");
+            if (ret[2] != 0)
+            {
+                chartFeedbackUser_Feedback.Series["Series"].Points.AddXY("YES",
+                    Math.Truncate(100 * (Decimal.Parse(ret[0].ToString()) / Decimal.Parse(ret[2].ToString()) *
+                                         100)) / 100);
+                chartFeedbackUser_Feedback.Series["Series"].Points.AddXY("NO",
+                    Math.Truncate(100 * (Decimal.Parse(ret[1].ToString()) / Decimal.Parse(ret[2].ToString()) *
+                                         100)) / 100);
+            }
+            chartFeedbackUser_Feedback.Series["Series"].LabelFormat = "{#'%'}";
+            chartFeedbackUser_Feedback.Series["Series"].IsValueShownAsLabel = true;
+
+
             Title title = new Title();
             title.Font = new Font("Arial", 16, FontStyle.Bold);
-            title.Text = "Feedback Result";
+            title.Text = "Feedback All Users";
             chartFeedback_Feedback.Titles.Clear();
             chartFeedback_Feedback.Titles.Add(title);
+
+            Title title2 = new Title();
+            title2.Font = new Font("Arial", 16, FontStyle.Bold);
+            title2.Text = "Feedback User: " + cf;
+            chartFeedbackUser_Feedback.Titles.Clear();
+            chartFeedbackUser_Feedback.Titles.Add(title2);
+            
         }
 
         private async void btnRecommandation_HomePage_Click(object sender, EventArgs e)
@@ -883,8 +919,15 @@ namespace FaceRecognitionForm
 
         private void tabRecommandation_SelectedIndexChanged(object sender, EventArgs e)
         {
-                if(tabRecommandation.SelectedTab.TabIndex == 0)
-                    tabPage1.Visible = tabFacebook;
+            if (tabRecommandation.SelectedTab.TabIndex == 0)
+                tabPage1.Visible = tabFacebook;
+        }
+
+        private void btnStampaUser_Feedback_Click(object sender, EventArgs e)
+        {
+            PrintPreviewDialog ppd = new PrintPreviewDialog();
+            ppd.Document = chartFeedbackUser_Feedback.Printing.PrintDocument;
+            ppd.ShowDialog();
         }
     }
 }
