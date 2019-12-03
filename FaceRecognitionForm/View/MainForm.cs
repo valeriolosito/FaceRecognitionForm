@@ -41,6 +41,11 @@ namespace FaceRecognitionForm
 
         List<Like> likesList = new List<Like>();
         List<Movie> moviesList = new List<Movie>();
+
+        private string genreUserLog = String.Empty;
+        private string nameUserLog = String.Empty;
+        private string imgUserLog = String.Empty;
+
         private string genreAffectiva = String.Empty;
 
         private bool recommandationFacebook = false;
@@ -293,9 +298,11 @@ namespace FaceRecognitionForm
 
                 string gender = fbService.GetGender(token);
                 txtGender_UserDataFacebook.Text = gender;
-
+                genreUserLog = gender;
+                
                 string imgURL = string.Format("https://graph.facebook.com/{0}/picture?type=normal", id);
                 this.pictureBox_UserDataFacebook.ImageLocation = imgURL;
+                imgUserLog = imgURL;
 
                 //qui recupero le informazioni dell'utente se si era registrato sull'app (tramite email)
                 Person personDataReg = registerService.GetInfoUserReg(email);
@@ -312,6 +319,7 @@ namespace FaceRecognitionForm
                     enabledControls(this.paneltableUserDataFacebook);
 
                     cf = personDataReg.Cf;
+                    nameUserLog = String.Format("{0} {1}", personDataReg.Name, personDataReg.Surname);
                 }
                 else
                 {
@@ -754,6 +762,13 @@ namespace FaceRecognitionForm
             {
                 setCurrentPanel(this.panelRecommendation);
                 tabPage1.Visible = tabFacebook;
+
+                this.pictureBox_Recommandation.ImageLocation = imgUserLog;
+
+                if (genreUserLog.ToLower() == "male")
+                    lblUserLog_Recommandation.Text = String.Format("Bentornato {0}", nameUserLog);
+                else
+                    lblUserLog_Recommandation.Text = String.Format("Bentornata {0}", nameUserLog);
 
                 //se ho già raccomandato un film, non devo cercare un nuovo film ma devo mostrare sempre lo stesso
                 if (lblTitle2_Recommandation.Text == "Title Movie" && lblGenre2_Recommandation.Text == "Genre Movie" &&
