@@ -101,39 +101,6 @@ namespace FaceRecognitionForm.Service
             return movies;
         }
 
-        /*
-         *   public string GetMovieLink(string title)
-          {
-              string result = string.Empty;
-              SqlConnection conn = new SqlConnection(this.connectionString);
-              try
-              {
-                  conn.Open();
-                  string query =
-                      "SELECT top(1) Movie_imbd_link FROM [FaceRecognition].[dbo].[Film] where Title = @Title";
-                  SqlCommand command = new SqlCommand(query, conn);
-                  SqlParameter parName = command.Parameters.AddWithValue("@Title", title);
-                  parName.DbType = DbType.String;
-                  using (SqlDataReader reader = command.ExecuteReader())
-                  {
-                      if (reader.Read())
-                      {
-                          result = reader["Movie_imbd_link"].ToString();
-                      }
-                  }
-              }
-              catch (Exception ex)
-              {
-                  Console.Write(ex.Message);
-              }
-              finally
-              {
-                  conn.Close();
-              }
-
-              return result;
-          }
-         */
         public List<string> set(string genre)
         {
             List<string> movies = new List<string>();
