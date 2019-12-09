@@ -1,0 +1,2 @@
+Seguire prima di tutto la guida chiamata "Guida per importazione Film".
+Poi eseguire lo script chiamato "CREATE_TABLE_FEEDBACK"
